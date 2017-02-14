@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-12 21:29:16 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="cn.mutu.land.model.NoticeColumns" table="notice_columns" catalog="caiwu">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="columnName" type="string">
+            <column name="column_name" length="50">
+                <comment>columnName</comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200">
+                <comment>description</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

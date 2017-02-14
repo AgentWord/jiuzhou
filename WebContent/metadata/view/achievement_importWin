@@ -1,0 +1,24 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "achievement_importWin",
+        "designer|userClassName": "achievement_importWin",
+        "height": 520,
+        "html": [
+            "<iframe src='office/supplementfiles.html' frameborder=0 width=100% height=100%></iframe>",
+            ""
+        ],
+        "id": "achievement_importWin",
+        "title": "上传成果",
+        "width": 690
+    },
+    "name": "MyWindow",
+    "designerId": "15d3dc0f-5ad2-4795-8416-b1d3cdba1771",
+    "viewControllerInstanceId": "9bdc65ae-2a14-4bb9-b669-7fedbd454250",
+    "viewModelInstanceId": "792a5cdd-4fe9-400a-bd22-8e0e8a4c060a"
+}

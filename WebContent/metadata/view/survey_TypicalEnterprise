@@ -1,0 +1,593 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "survey_TypicalEnterprise",
+        "designer|userClassName": "survey_TypicalEnterprise",
+        "height": 671,
+        "id": null,
+        "layout": "border",
+        "title": "典型企业调查",
+        "width": 786
+    },
+    "name": "survey_Landuse1",
+    "designerId": "64d22e86-ae59-4d77-8233-730a8e5f293c",
+    "viewControllerInstanceId": "9c28e495-a6bd-4f82-905a-cb6de88b2365",
+    "viewModelInstanceId": "b2fd1140-1817-43fc-80f4-202b52bdfb03",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": [
+                    "<div id = \"survey_TypicalEnterprise_div\" style = \"width=100%;height:100%;\"></div>"
+                ],
+                "id": "survey_TypicalEnterprise_MapPanel",
+                "layout": "fit",
+                "layout|region": "center",
+                "layout|split": true,
+                "title": ""
+            },
+            "name": "MyPanel6",
+            "designerId": "192d32f0-370a-4b3f-b9a5-d2cfe03a3919",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar11",
+                    "designerId": "efc8e7b5-1754-4ab0-9443-a3d05be09af5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": null,
+                                "fieldLabel": "开发区级别",
+                                "hidden": true,
+                                "id": "ent_check_gradeCombo1",
+                                "labelWidth": 80,
+                                "layout|flex": null,
+                                "store": [
+                                    "['全部','国家级','省级','示范区']"
+                                ],
+                                "valueField": "mapUrl",
+                                "width": 181
+                            },
+                            "name": "MyComboBox6",
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "5b54ee38-0b7c-4ee5-a77e-fc96460bffc1"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": null,
+                                "fieldLabel": "开发区类型",
+                                "hidden": true,
+                                "id": "ent_check_typeCombo1",
+                                "labelWidth": 80,
+                                "layout|flex": null,
+                                "store": [
+                                    "['全部','工业主导型','产城融合型']"
+                                ],
+                                "valueField": "mapUrl",
+                                "width": 190
+                            },
+                            "name": "MyComboBox7",
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "a646d8e7-6133-456c-b045-65db4467e508"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "mapName",
+                                "fieldLabel": "选择开发区",
+                                "id": "survey_TypicalEnterprise_LayerCombo",
+                                "labelWidth": 80,
+                                "layout|flex": null,
+                                "store": "systemMapQYYDLayerStore",
+                                "valueField": "mapUrl",
+                                "width": 300
+                            },
+                            "name": "MyComboBox",
+                            "designerId": "3381c3e2-4c59-4fd0-bc50-e7a1c626db94"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": null,
+                                "fieldLabel": "选择年份",
+                                "hidden": true,
+                                "id": "ent_check_yearCombo1",
+                                "labelWidth": 80,
+                                "layout|flex": null,
+                                "store": [
+                                    "['2016','2015','2014','2013','2012','2011','2010']"
+                                ],
+                                "valueField": "mapUrl",
+                                "width": 190
+                            },
+                            "name": "MyComboBox4",
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "67d9a356-a1d4-4a9d-97fd-bfba31f818fa"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar1",
+                    "designerId": "e3d50631-edb1-45aa-b2e1-5f1bfb8ff9be"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPanelAfterRender1",
+                        "implHandler": [
+                            "//加入地图的js文件",
+                            "var head = document.getElementsByTagName('head')[0];",
+                            "var script= document.createElement(\"script\");",
+                            "script.type = \"text/javascript\";",
+                            "script.src=\"mapjs/survey_TypicalEnterprise_map.js\";",
+                            "head.appendChild(script);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "name": "onPanelAfterRender1",
+                    "designerId": "6379dd35-33a7-4857-9fef-9cfa62781e90"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsed": true,
+                "height": 250,
+                "id": "survey_TypicalEnterpriseGrid",
+                "layout|region": "south",
+                "layout|split": true,
+                "title": "属性数据"
+            },
+            "name": "MyGridPanel",
+            "designerId": "8b3ee0ef-802e-4aa1-8a52-c4ddb1d0bfcb",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyRowNumberer",
+                    "designerId": "139d3395-bddb-4c94-a334-eea39e53b6b5"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DXDM",
+                        "format": "0,000",
+                        "text": "企业代码",
+                        "width": 80
+                    },
+                    "name": "MyNumberColumn1",
+                    "designerId": "026b18c4-8a5f-4155-8f35-6d81162d4855"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "QYMC",
+                        "text": "企业名称",
+                        "width": 150
+                    },
+                    "name": "MyColumn5",
+                    "designerId": "c3c1d4ea-5fda-47e9-bac3-a72ac86364f8"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "QYDZ",
+                        "text": "企业地址",
+                        "width": 80
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "f40d086f-5298-41b5-8de0-7d09f3370da5"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "SSPJFW",
+                        "text": "所属评价范围",
+                        "width": 150
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "4e71d990-d93b-4975-abbc-21852a670bc9"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "HYLB",
+                        "text": "行业类别",
+                        "width": 80
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "d1d7f4df-7fe6-4a87-8efa-09115ec62d08"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "HYDM",
+                        "format": "0,000",
+                        "text": "行业代码",
+                        "width": 150
+                    },
+                    "name": "MyNumberColumn20",
+                    "designerId": "ca3e1430-6b08-4194-933f-6c200d9149af"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "QYRS",
+                        "format": "0,000",
+                        "text": "企业人数/人"
+                    },
+                    "name": "MyNumberColumn19",
+                    "designerId": "c77ad1c1-e733-4b72-b560-12b8acccd4d9"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "YJZTZ",
+                        "text": "预计总投资/万元"
+                    },
+                    "name": "MyNumberColumn2",
+                    "designerId": "0fd62a32-bbcd-4873-9ecf-eb37de11c320"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "WCTZ",
+                        "text": "完成总投资/万元"
+                    },
+                    "name": "MyNumberColumn",
+                    "designerId": "ae0b849b-ac78-42c3-bf5c-04141556b22b"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ZSR",
+                        "text": "总收入/万元"
+                    },
+                    "name": "MyNumberColumn3",
+                    "designerId": "d2bfcc76-cfc9-4d83-b06d-43f0db431887"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ZCZ",
+                        "text": "总产值/万元"
+                    },
+                    "name": "MyNumberColumn4",
+                    "designerId": "fcfec349-f3ce-422d-aeb7-2a97fe185922"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "SSZE",
+                        "text": "税收总额/万元"
+                    },
+                    "name": "MyNumberColumn5",
+                    "designerId": "ae667918-1066-48bf-9045-88901ff7c7af"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "QYYDMJ",
+                        "text": "企业用地面积/公顷"
+                    },
+                    "name": "MyNumberColumn6",
+                    "designerId": "6e19bdf9-aa89-467c-9123-7f13cc9c66bf"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CFPT",
+                        "text": "厂房配套面积/公顷"
+                    },
+                    "name": "MyNumberColumn7",
+                    "designerId": "1794606c-f3f4-4811-b430-5c2381c4b360"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "XZBG",
+                        "text": "行政办公面积/公顷"
+                    },
+                    "name": "MyNumberColumn8",
+                    "designerId": "b3bb970d-2a57-4933-b593-a0e3466f6c3c"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "LTCD",
+                        "text": "露天操作面积/公顷"
+                    },
+                    "name": "MyNumberColumn9",
+                    "designerId": "067e5c6f-4258-4d53-9dc6-fcaf37cd9120"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "NBYLD",
+                        "text": "内部预留地/公顷"
+                    },
+                    "name": "MyNumberColumn10",
+                    "designerId": "40852d01-62c7-4583-9fa4-d25f370399a7"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DLTCC",
+                        "text": "道路停车场/公顷"
+                    },
+                    "name": "MyNumberColumn11",
+                    "designerId": "aea6b9e9-9771-42b6-b19a-497f8bcbba18"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "LD",
+                        "text": "绿地面积/公顷"
+                    },
+                    "name": "MyNumberColumn12",
+                    "designerId": "4bb232af-01ed-41b7-8da9-4732ff2c27f0"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "QT",
+                        "text": "其他面积/公顷"
+                    },
+                    "name": "MyNumberColumn13",
+                    "designerId": "2ef10a7e-b903-47d9-879a-deb5af0f2d24"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ZJZMJ",
+                        "text": "总建筑面积/万平方米"
+                    },
+                    "name": "MyNumberColumn14",
+                    "designerId": "5d8bcc42-fdd1-4cbf-b5af-05b138b631f1"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "RJL",
+                        "text": "容积率"
+                    },
+                    "name": "MyNumberColumn17",
+                    "designerId": "d79d89a8-c68e-4ac3-9150-5686bf10f1f5"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "JDZMJ",
+                        "text": "基底总面积/万平方米"
+                    },
+                    "name": "MyNumberColumn15",
+                    "designerId": "2e5897ba-a2b5-43e6-8c1e-236561c21e5c"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "JZXS",
+                        "text": "建筑系数/%"
+                    },
+                    "name": "MyNumberColumn16",
+                    "designerId": "f00b7949-e7e6-4c75-a88e-84f81e04b0c7"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "BZ",
+                        "text": "备注"
+                    },
+                    "name": "MyNumberColumn18",
+                    "designerId": "2607c3f1-6e2d-4d4e-9f7f-a87c9f463a95"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView",
+                    "designerId": "a234b402-933a-421d-8b15-b95300600684"
+                }
+            ]
+        }
+    ]
+}

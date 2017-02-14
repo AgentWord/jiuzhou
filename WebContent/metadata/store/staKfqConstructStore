@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "designer|userClassName": "staKfqConstructStore",
+        "model": "staKfqConstructModel",
+        "storeId": "staKfqConstructStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "bf77cb2a-7364-48eb-af20-750022608fd4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{searchKeyword:''}"
+                ],
+                "url": "get_stakfq"
+            },
+            "name": "MyAjaxProxy6",
+            "designerId": "c78dddb0-786c-404f-8fc5-410e38c47900",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "root"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "e700f5d7-9dab-4605-b052-6d7aac03b44c"
+                }
+            ]
+        }
+    ]
+}

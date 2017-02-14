@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-12 21:29:16 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="cn.mutu.land.model.CostDetail" table="cost_detail" catalog="caiwu">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="xianMu" type="string">
+            <column name="xian_mu" length="200">
+                <comment>&#207;&#238;&#196;&#191;</comment>
+            </column>
+        </property>
+        <property name="costDate" type="string">
+            <column name="cost_date" length="20">
+                <comment>&#214;&#167;&#179;&#246;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="costType" type="string">
+            <column name="cost_type" length="20">
+                <comment>&#214;&#167;&#179;&#246;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="costUse" type="string">
+            <column name="cost_use" length="50">
+                <comment>&#211;&#195;&#205;&#190;</comment>
+            </column>
+        </property>
+        <property name="costMuch" type="java.lang.Double">
+            <column name="cost_much" precision="22" scale="0">
+                <comment>&#214;&#167;&#179;&#246;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="incomeMuch" type="java.lang.Double">
+            <column name="income_much" precision="22" scale="0">
+                <comment>&#202;&#213;&#200;&#235;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="accountRemain" type="java.lang.Double">
+            <column name="account_remain" precision="22" scale="0" />
+        </property>
+        <property name="shouKuanRen" type="string">
+            <column name="shou_kuan_ren" length="10" />
+        </property>
+        <property name="bz" type="string">
+            <column name="bz" length="500" />
+        </property>
+        <property name="dealStatus" type="string">
+            <column name="deal_status" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

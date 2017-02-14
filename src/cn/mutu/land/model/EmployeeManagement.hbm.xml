@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-12 21:29:16 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="cn.mutu.land.model.EmployeeManagement" table="employee_management" catalog="caiwu">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeId" type="java.lang.Integer">
+            <column name="employee_id" />
+        </property>
+        <property name="employeeName" type="string">
+            <column name="employee_name" length="20" />
+        </property>
+        <property name="employeeAge" type="java.lang.Integer">
+            <column name="employee_age" />
+        </property>
+        <property name="employeeDepart" type="string">
+            <column name="employee_depart" length="20" />
+        </property>
+        <property name="employeePhone" type="java.lang.Integer">
+            <column name="employee_phone" />
+        </property>
+        <property name="employeeAddress" type="string">
+            <column name="employee_address" length="100" />
+        </property>
+        <property name="employeeJoinTime" type="string">
+            <column name="employee_join_time" length="20" />
+        </property>
+        <property name="employeeOutTime" type="string">
+            <column name="employee_out_time" length="20" />
+        </property>
+        <property name="bz" type="string">
+            <column name="bz" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

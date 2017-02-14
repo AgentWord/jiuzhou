@@ -1,0 +1,724 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userAlias": "thematic_LanduseConstructionChangeTrend",
+        "designer|userClassName": "thematic_LanduseConstructionChangeTrend",
+        "height": 741,
+        "id": null,
+        "layout": "border",
+        "title": "土地利用结构变化趋势分析",
+        "width": 945
+    },
+    "name": "thematic_LanduseConstructionContrast1",
+    "designerId": "074a2a32-a485-4d6f-b19c-5a450a8a85da",
+    "viewControllerInstanceId": "4a47206f-5e1d-41d3-b1bf-d71a875dbf42",
+    "viewModelInstanceId": "1c79a484-2db3-42e3-b65c-336303a1e602",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "id": "landuseTable",
+                "layout|region": "center"
+            },
+            "name": "MyTabPanel3",
+            "designerId": "4071988a-2974-4392-bfc7-ebd0ff976133",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "landuse_jzzk",
+                        "layout": "border",
+                        "title": "用地现状统计"
+                    },
+                    "name": "MyPanel24",
+                    "designerId": "08db8638-f2c0-48ec-b576-06299ed77885",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": [
+                                    "<div id = \"thematic_LanduseConstructionChangeTrend_echart\" class=\"echartsDiv\"></div>"
+                                ],
+                                "layout": "fit",
+                                "layout|region": "center",
+                                "layout|split": true,
+                                "title": null
+                            },
+                            "name": "MyPanel",
+                            "designerId": "170a5920-58fb-4a20-937e-4146d726207c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPanelAfterRender1",
+                                        "implHandler": [
+                                            "/*var head = document.getElementsByTagName('head')[0];",
+                                            "var script= document.createElement(\"script\");",
+                                            "script.type = \"text/javascript\";",
+                                            "script.src=\"echarts/thematic_LanduseConstructionChange_DLMC.js\";//\"mapjs/dataImport.js\";//",
+                                            "head.appendChild(script);*/"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPanelAfterRender1",
+                                    "designerId": "350e0e17-3ff4-4252-acb1-b7b939fe9717"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapsed": true,
+                                "collapsible": true,
+                                "dock": null,
+                                "height": 150,
+                                "id": "thematic_jzzk_Grid",
+                                "layout|region": "south",
+                                "layout|split": true,
+                                "store": null,
+                                "title": "历年土地建设状况统计数据"
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "702de879-7d7c-4a52-99ff-263c5d5de7f6",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "4e0cc2c0-24f3-430f-9680-75c3c0886eda"
+                                },
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyRowNumberer1",
+                                    "designerId": "034aabac-c769-41f4-a7ac-c68a8f7756fb"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThematic_LCCT_GridActivate",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "activate",
+                                        "scope": "me"
+                                    },
+                                    "name": "onThematic_LCCT_GridActivate",
+                                    "designerId": "0b73ff54-30f1-4ef7-b928-d5f79c614d5b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig9",
+                            "designerId": "2c395278-b142-462d-a2fc-ad3169eb42d2"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelActivate",
+                                "implHandler": [
+                                    "",
+                                    "// //thematic_LanduseConstructionChange_dlmcCaculate_map//thematic_LanduseConstructionChange_DLMC_map",
+                                    "// var head = document.getElementsByTagName('head')[0];",
+                                    "//         var script= document.createElement(\"script\");",
+                                    "//         script.type = \"text/javascript\";",
+                                    "//         script.src=\"mapjs/thematic_LanduseConstructionChange_dlmcCaculate_map.js\";//\"mapjs/dataImport.js\";//",
+                                    "//         head.appendChild(script);",
+                                    "// var head = document.getElementsByTagName('head')[0];",
+                                    "// var script= document.createElement(\"script\");",
+                                    "// script.type = \"text/javascript\";",
+                                    "// script.src=\"echarts/thematic_LanduseConstructionChange_DLMC.js\";//\"mapjs/dataImport.js\";//",
+                                    "// head.appendChild(script);"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "name": "onPanelActivate",
+                            "designerId": "fc68e7e6-8644-41f4-a0fd-82318e2f9135"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "landuse_gyzk",
+                        "layout": "border",
+                        "title": "土地供应状况"
+                    },
+                    "name": "MyPanel26",
+                    "designerId": "593d5670-91b4-42a1-93c6-f35afd4fa301",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": [
+                                    "<div id = \"thematic_LanduseConstructionChangeTrend_GYLX_echart\" class=\"echartsDiv\"></div>"
+                                ],
+                                "layout": "fit",
+                                "layout|region": "center",
+                                "layout|split": true,
+                                "title": null
+                            },
+                            "name": "MyPanel27",
+                            "designerId": "5701f12c-30c6-4441-a082-37b229ce6e0a"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": null,
+                                "height": 150,
+                                "id": "thematic_gyzk_Grid",
+                                "layout|region": "south",
+                                "layout|split": true,
+                                "store": null,
+                                "title": "历年土地供应状况统计数据"
+                            },
+                            "name": "MyGridPanel8",
+                            "designerId": "059215a9-c2b4-481d-945a-00806f771a44",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "b9b60102-087b-4ef1-8fba-bda0d3f373fe"
+                                },
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyRowNumberer1",
+                                    "designerId": "b8754789-1a2a-4885-ae6a-df3f37f44dd4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig10",
+                            "designerId": "cc47df32-cb90-4f79-88ba-52b26b1ed4b0"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelActivate1",
+                                "implHandler": [
+                                    "",
+                                    "var kfqType = Ext.getCmp('the_kfqtypeCombo').getValue();",
+                                    "console.log(\"开发区类型是：\"+kfqType);",
+                                    "// var head = document.getElementsByTagName('head')[0];",
+                                    "//         var script= document.createElement(\"script\");",
+                                    "//         script.type = \"text/javascript\";",
+                                    "//         script.src=\"mapjs/thematic_LanduseConstructionChange_GYLX_map.js\";//\"mapjs/dataImport.js\";//",
+                                    "//         head.appendChild(script);",
+                                    "// var head = document.getElementsByTagName('head')[0];",
+                                    "// var script= document.createElement(\"script\");",
+                                    "// script.type = \"text/javascript\";",
+                                    "// script.src=\"echarts/thematic_LanduseConstructionChange_GYLX.js\";//\"mapjs/dataImport.js\";//",
+                                    "// head.appendChild(script);"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "name": "onPanelActivate1",
+                            "designerId": "31a7df30-a7d9-4564-901e-96d8889b20bc"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar3",
+            "designerId": "1b088c2a-fbb6-4418-ac77-5addcbc99b6e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "fieldLabel": "选择统计类型",
+                        "id": "the_statisticType",
+                        "layout|flex": null,
+                        "store": "landKfqNow",
+                        "value": "",
+                        "valueField": "value",
+                        "width": 250
+                    },
+                    "name": "MyComboBox4",
+                    "configAlternates": {
+                        "value": "string"
+                    },
+                    "designerId": "bb901f0e-d041-4d5c-87f1-871fc28e2db1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onThe_statisticTypeChange",
+                                "implHandler": [
+                                    "var value=Ext.getCmp('the_statisticType').getRawValue();",
+                                    "Ext.getCmp('landuse_jzzk').setTitle(value);"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onThe_statisticTypeChange",
+                            "designerId": "fe73b57b-cd32-465a-ba29-132c45c8c9fb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "name",
+                        "fieldLabel": "起始年份",
+                        "id": "thematicLCCT_StartYearCombo",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "renderData": [
+                            "return [",
+                            "    {\"name\": \"2016\",\"value\": \"2016\"},",
+                            "    {\"name\": \"2015\",\"value\": \"2015\"},",
+                            "    {\"name\": \"2014\",\"value\": \"2014\"},",
+                            "    {\"name\": \"2013\",\"value\": \"2013\"},",
+                            "    {\"name\": \"2012\",\"value\": \"2012\"},",
+                            "    {\"name\": \"2011\",\"value\": \"2011\"},",
+                            "    {\"name\": \"2010\",\"value\": \"2010\"}",
+                            "];",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "store": "tmematic_LCCT_StartYearStore",
+                        "value": [
+                            "'2013'"
+                        ],
+                        "valueField": "value",
+                        "valueNotFoundText": "时间超出范围",
+                        "width": 150
+                    },
+                    "name": "MyComboBox3",
+                    "designerId": "d4121e5d-f7f3-49b5-8b8d-84a84a7c93ad"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "name",
+                        "fieldLabel": "截止年份",
+                        "id": "thematicLCCT_EndYearCombo",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "renderData": [
+                            "return [",
+                            "    {\"name\": \"2016\",\"value\": \"2016\"},",
+                            "    {\"name\": \"2015\",\"value\": \"2015\"},",
+                            "    {\"name\": \"2014\",\"value\": \"2014\"},",
+                            "    {\"name\": \"2013\",\"value\": \"2013\"},",
+                            "    {\"name\": \"2012\",\"value\": \"2012\"},",
+                            "    {\"name\": \"2011\",\"value\": \"2011\"},",
+                            "    {\"name\": \"2010\",\"value\": \"2010\"}",
+                            "];",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "store": "tmematic_LCCT_EndYearStore",
+                        "value": [
+                            "'2013'"
+                        ],
+                        "valueField": "value",
+                        "width": 150
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "1dcdd46c-2845-451f-b57e-108989025068"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "thematicLCCT_SubmitButton",
+                        "layout|flex": null,
+                        "text": "开始分析"
+                    },
+                    "name": "MyButton",
+                    "designerId": "ba5efefd-ef1c-4f64-a91c-425f1b81d1c5"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "开始统计"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "8410b80c-f7e3-49f5-8664-dc42040d91cb",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "//加入地图的js文件",
+                                    "var head = document.getElementsByTagName('head')[0];",
+                                    "var script= document.createElement(\"script\");",
+                                    "script.type = \"text/javascript\";",
+                                    "script.src=\"mapjs/thematic_LanduseConstructionClassicStatistic.js\";//thematic_LanduseConstructionChangeTrend_map.js",
+                                    "head.appendChild(script);",
+                                    "Ext.Msg.alert('提示',\"统计完成！\");"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "38655695-dd23-48ed-8f56-f0e5a7506f87"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar6",
+            "designerId": "d489051c-3a9c-4ed1-8326-1afca7a9b21c",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": null,
+                        "fieldLabel": "选择区域",
+                        "id": "the_kfqZoneCombo",
+                        "labelWidth": 80,
+                        "layout|flex": null,
+                        "store": [
+                            "['黑龙江省','哈尔滨市','牡丹江市','大庆市','双鸭山市','绥化市','黑河市','齐齐哈尔市','佳木斯市','鸡西市','伊春市','七台河市','鹤岗市','大兴安岭地区']"
+                        ],
+                        "valueField": "mapUrl",
+                        "width": 202
+                    },
+                    "name": "MyComboBox6",
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "d811706b-8390-4aad-9485-03b119b15504"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": null,
+                        "fieldLabel": "开发区级别",
+                        "id": "the_kfqGradeCombo",
+                        "labelWidth": 80,
+                        "layout|flex": null,
+                        "store": [
+                            "['国家级','省级','省级以下']"
+                        ],
+                        "valueField": "mapUrl",
+                        "width": 202
+                    },
+                    "name": "MyComboBox6",
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "e94484ee-c8f6-4d33-97a5-9296e118ebf3"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": null,
+                        "fieldLabel": "开发区评价类型",
+                        "id": "the_kfqtypeCombo",
+                        "layout|flex": null,
+                        "store": [
+                            "['工业主导型开发区','产城融合型开发区']"
+                        ],
+                        "valueField": "mapUrl",
+                        "width": 250
+                    },
+                    "name": "MyComboBox7",
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "bd6fae84-59b9-4b46-82de-f15955fc9ab5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onThe_kfqtypeComboChange",
+                                "implHandler": [
+                                    "",
+                                    ""
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onThe_kfqtypeComboChange",
+                            "designerId": "4acd55ba-362b-43b0-adcb-69e935f9f545"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "fieldLabel": "开发区审批类型",
+                        "id": "the_kfqSpTypeCombo",
+                        "layout|flex": null,
+                        "store": "landKfqSpTypeComboStore",
+                        "valueField": "value",
+                        "width": 250
+                    },
+                    "name": "MyComboBox8",
+                    "designerId": "e2430189-5ada-42b6-ae8e-75e5285ebb83",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onThe_kfqtypeComboChange1",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onThe_kfqtypeComboChange1",
+                            "designerId": "e8910ce7-db6f-4d74-bee6-62c52fa8c81b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar4",
+            "designerId": "ea2a42cf-c30e-467e-828c-405b756fcc35",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "calcName",
+                        "fieldLabel": "选择开发区",
+                        "id": "the_kfqNameCombo",
+                        "labelWidth": 80,
+                        "layout|flex": null,
+                        "store": "landKfqTypeStore",
+                        "valueField": "kfqsplx",
+                        "width": 268
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "759208a2-fa62-4b24-bb0f-0c8ab435ef52"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "calcName",
+                        "fieldLabel": "选择开发区评价范围",
+                        "id": "the_kfqRangeCombo",
+                        "labelWidth": 130,
+                        "layout|flex": null,
+                        "store": [
+                            "['主区','发展区']"
+                        ],
+                        "value": "主区",
+                        "valueField": null,
+                        "width": 230
+                    },
+                    "name": "MyComboBox10",
+                    "configAlternates": {
+                        "store": "array",
+                        "value": "string"
+                    },
+                    "designerId": "60b88d65-d55c-4b14-a080-f32b74aabb9b"
+                }
+            ]
+        }
+    ]
+}

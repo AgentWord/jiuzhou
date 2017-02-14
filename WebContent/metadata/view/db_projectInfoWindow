@@ -1,0 +1,464 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "db_projectInfoWindow",
+        "designer|userClassName": "db_projectInfoWindow",
+        "height": 629,
+        "id": "db_projectInfoWindow",
+        "layout": "fit",
+        "title": "查看项目详情",
+        "width": 630
+    },
+    "name": "db_projectInfoAddWindow1",
+    "designerId": "6ddc0cdc-5dc0-4f07-8d30-7ca033f75cb3",
+    "viewControllerInstanceId": "da3e3a3f-2c92-4696-9e97-84e1baa15a11",
+    "viewModelInstanceId": "2da11702-406f-4555-b603-55d2766b677c",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "id": "db_projectInfoWindowForm",
+                "jsonSubmit": true,
+                "layout": "auto",
+                "title": null,
+                "url": "add_ProjectInfo"
+            },
+            "name": "MyForm7",
+            "designerId": "5e588304-772f-49e4-994f-096366c58e59",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 10,
+                        "height": 104,
+                        "layout": "absolute",
+                        "title": "项目基本信息",
+                        "width": 615
+                    },
+                    "name": "MyFieldSet6",
+                    "designerId": "391760e8-63fd-433a-80e4-f31f1aac7062",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "项目名称",
+                                "id": "proName1",
+                                "labelWidth": 70,
+                                "layout|x": 0,
+                                "layout|y": 10,
+                                "name": "proName",
+                                "readOnly": false,
+                                "width": 400
+                            },
+                            "name": "MyTextField40",
+                            "designerId": "65a21c6d-eef4-4a8f-9837-af27d56d76d9"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "项目编号",
+                                "id": "proId1",
+                                "labelWidth": 70,
+                                "layout|x": 0,
+                                "layout|y": 50,
+                                "name": "proId",
+                                "readOnly": false,
+                                "width": 240
+                            },
+                            "name": "MyTextField41",
+                            "designerId": "db0885fb-3976-4939-8f6e-e933538f1ab9"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "项目支出",
+                                "id": null,
+                                "labelWidth": 70,
+                                "layout|x": 270,
+                                "layout|y": 50,
+                                "name": "proCost",
+                                "width": 160
+                            },
+                            "name": "MyDisplayField",
+                            "designerId": "d3dfb26f-35d7-4923-a5a5-2bb91f89a987"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "资金剩余",
+                                "id": null,
+                                "labelWidth": 70,
+                                "layout|x": 440,
+                                "layout|y": 50,
+                                "name": "proCostRemain",
+                                "width": 160
+                            },
+                            "name": "MyDisplayField1",
+                            "designerId": "307c7886-8aaf-406f-9612-f871d88de4b7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 449,
+                        "title": "项目详细信息",
+                        "width": 615
+                    },
+                    "name": "MyFieldSet7",
+                    "designerId": "87ccd938-2f57-46bc-9fbf-d060f6a2f8dd",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "emptyText": "0",
+                                "fieldLabel": "项目金额",
+                                "id": "proMoney1",
+                                "inputType": null,
+                                "labelWidth": 70,
+                                "name": "proMoney",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyNumberField",
+                            "designerId": "8bacb643-5de1-4c07-a38b-a274d5e998b5"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "0",
+                                "fieldLabel": "到账金额",
+                                "id": "proIncome1",
+                                "inputType": null,
+                                "labelWidth": 70,
+                                "name": "proIncome",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyNumberField1",
+                            "designerId": "2b2d6ba8-52ab-4db0-ad92-4df52e8d3611"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "editable": false,
+                                "emptyText": "0",
+                                "fieldLabel": "剩余金额",
+                                "id": "proRemain1",
+                                "inputType": null,
+                                "labelWidth": 70,
+                                "name": "proRemain",
+                                "readOnly": false,
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyNumberField2",
+                            "designerId": "65c43f9a-e9a2-4454-982b-18b5e21132fe"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "主管单位",
+                                "id": null,
+                                "inputType": null,
+                                "labelWidth": 70,
+                                "name": "proZhuguan",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyTextField11",
+                            "designerId": "39bf8351-af09-4ef0-9fe4-27f4877ad5a9"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "合作单位",
+                                "id": null,
+                                "inputType": null,
+                                "labelWidth": 70,
+                                "name": "proHezuo",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "04eaab5b-8e82-47be-8ba4-17bbe1c88786"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "开始时间",
+                                "format": "Y-m-d",
+                                "id": null,
+                                "labelWidth": 70,
+                                "name": "proStartTime",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyDateField",
+                            "designerId": "470a6da7-982b-4135-b460-e7c58c92c342"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "结束时间",
+                                "format": "Y-m-d",
+                                "id": null,
+                                "labelWidth": 70,
+                                "name": "proEndTime",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyDateField3",
+                            "designerId": "96386e49-4e93-4b4d-92ef-835fe824de80"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "displayField": "trueName",
+                                "fieldLabel": "项目经理",
+                                "id": null,
+                                "labelWidth": 70,
+                                "name": "proManager",
+                                "store": "uUserInfoStore",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "c48aad76-9d49-4cc7-bd40-1bc75d415c19"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "参与人员",
+                                "id": null,
+                                "labelWidth": 70,
+                                "name": "proTeam",
+                                "validateBlank": true,
+                                "width": 400
+                            },
+                            "name": "MyTextField38",
+                            "designerId": "69339bc4-22e1-46e4-837b-26acfdc43ec7"
+                        },
+                        {
+                            "type": "Ext.form.field.HtmlEditor",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "项目简介",
+                                "height": 96,
+                                "id": null,
+                                "labelWidth": 70,
+                                "name": "proBz"
+                            },
+                            "name": "MyHtmlEditor7",
+                            "designerId": "f86d866f-8a35-4950-9d3e-9fa8cd441973"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "项目状态",
+                                "layout|anchor": "100%",
+                                "name": "proStatus"
+                            },
+                            "name": "MyTextField39",
+                            "designerId": "fe00f996-b992-47fc-a691-1973ba17e22e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "项目申请人",
+                                "layout|anchor": "100%",
+                                "name": "proApplication"
+                            },
+                            "name": "MyTextField43",
+                            "designerId": "4ebeda79-1da5-4cf1-a490-e618360f093c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "name": "MyToolbar8",
+                    "designerId": "ee1934ee-1dc1-4371-8b03-43dfea82e426",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MyFill8",
+                            "designerId": "a2914d35-d53a-479a-a8ca-ef799624a2f3"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "关闭"
+                            },
+                            "name": "MyButton26",
+                            "designerId": "94cb9d99-617f-4b5b-99b6-c5d44d042424",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "var win = Ext.getCmp('db_projectInfoWindow');",
+                                            "win.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick1",
+                                    "designerId": "cde35d5f-65ff-440a-85ff-c6942121e352"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 30
+                            },
+                            "name": "MySpacer8",
+                            "designerId": "ccea4a1f-4739-4380-a247-e6cb19e2ff05"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

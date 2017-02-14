@@ -1,0 +1,23 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "achievement_importHisWin",
+        "designer|userClassName": "achievement_importHisWin",
+        "height": 580,
+        "html": [
+            " <iframe src='office/uploadfiles.html' frameborder=0 width=100% height=100%></iframe>"
+        ],
+        "id": "achievement_importHisWin",
+        "layout": "border",
+        "title": "历史成果入库",
+        "width": 690
+    },
+    "designerId": "ff47536a-86f6-40ec-a76d-0ed94993aeeb",
+    "viewControllerInstanceId": "1584269b-3115-4a1e-be83-83f025d7ccbb",
+    "viewModelInstanceId": "882c5d2a-5c5d-47a6-b120-eee56f606f94"
+}

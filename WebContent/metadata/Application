@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "thematic_LanduseIndexValueModel",
+            "costInfoModel"
+        ],
+        "name": "MyApp",
+        "stores": [
+            "thematic_LanduseIndexValueStore",
+            "landKfqSpTypeComboStore"
+        ],
+        "views": [
+            "thematic_LanduseIndexValue",
+            "myKfqMap",
+            "enterprise_IntensityScoreCheck",
+            "kfq_preview",
+            "thematic_landuseDataImport",
+            "achievement_importWin",
+            "projectManagement",
+            "db_projectInfoAddWindow",
+            "db_projectInfoWindow",
+            "baoXIaoManagement",
+            "baoXiao_chailv",
+            "baoXiao_richang"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

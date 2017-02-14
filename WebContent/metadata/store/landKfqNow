@@ -1,0 +1,80 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"name\": \"用地现状统计\",",
+            "        \"value\": \"xz\"",
+            "    },",
+            "   ",
+            "    {",
+            "        \"name\": \"土地开发状况\",",
+            "        \"value\": \"kf\"",
+            "    },",
+            "    {",
+            "        \"name\": \"土地供应状况\",",
+            "        \"value\": \"gy\"",
+            "    },",
+            "    {",
+            "        \"name\": \"土地建成状况\",",
+            "        \"value\": \"jc\"",
+            "    },",
+            "    {",
+            "        \"name\": \"土地利用结构\",",
+            "        \"value\": \"jg\"",
+            "    },",
+            "    {",
+            "        \"name\": \"建筑工程状况\",",
+            "        \"value\": \"gc\"",
+            "    },",
+            "    {",
+            "        \"name\": \"土地用地效益\",",
+            "        \"value\": \"xy\"",
+            "    },",
+            "    {",
+            "        \"name\": \"土地管理绩效状况\",",
+            "        \"value\": \"jx\"",
+            "    }",
+            "    ",
+            "]"
+        ],
+        "designer|userClassName": "landKfqNow",
+        "storeId": "landKfqNow"
+    },
+    "name": "landKfqSpTypeComboStore1",
+    "designerId": "2f9c0c1d-89f0-4685-b323-22d58fde16ea",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField8",
+            "designerId": "1e459e23-432e-44e1-9d46-569933f33bae"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField9",
+            "designerId": "dc954f50-453b-458c-9fd1-ac6b82dc3ab1"
+        }
+    ]
+}

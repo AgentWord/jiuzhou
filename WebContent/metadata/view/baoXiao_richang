@@ -1,0 +1,918 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "baoXiao_richang",
+        "designer|userClassName": "baoXiao_richang",
+        "height": 597,
+        "id": "baoXiao_richang",
+        "layout": "fit",
+        "title": "差旅报销申请单",
+        "titleAlign": "center",
+        "width": 630
+    },
+    "name": "baoXiao_chailv1",
+    "designerId": "b7aa0e9d-51d7-4e87-a78e-66d406690895",
+    "viewControllerInstanceId": "43b92d68-a147-4835-90ec-aa1a2e4427ae",
+    "viewModelInstanceId": "2d195deb-a64f-43e9-87e3-31a691b30ac3",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "id": "baoXiao_chailvForm1",
+                "jsonSubmit": true,
+                "layout": "auto",
+                "title": null,
+                "url": "add_ProjectInfo"
+            },
+            "name": "MyForm7",
+            "designerId": "72e1f130-5d31-4bf3-b031-639686126143",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 10,
+                        "height": 87,
+                        "layout": "absolute",
+                        "title": "",
+                        "width": 615
+                    },
+                    "name": "MyFieldSet6",
+                    "designerId": "00488f38-34c5-4806-8845-429b84a39a0f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "displayField": "proName",
+                                "fieldLabel": "选择报销项目",
+                                "id": null,
+                                "labelWidth": 90,
+                                "layout|x": 0,
+                                "layout|y": 10,
+                                "name": "projectName",
+                                "readOnly": false,
+                                "store": "projectInfoStore",
+                                "width": 400
+                            },
+                            "name": "MyComboBox8",
+                            "designerId": "3977e65c-0ef5-49b4-b69d-45c044b98f85"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "displayField": "trueName",
+                                "fieldLabel": "报销申请人",
+                                "id": "applyUser1",
+                                "labelWidth": 90,
+                                "layout|x": 0,
+                                "layout|y": 50,
+                                "name": "applyUser",
+                                "readOnly": false,
+                                "store": "uUserInfoStore",
+                                "width": 230
+                            },
+                            "name": "MyComboBox9",
+                            "designerId": "5680affe-7943-40a2-ac5e-2c61c9918e5f"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "displayField": "deptName",
+                                "fieldLabel": "选择部门",
+                                "id": null,
+                                "labelWidth": 70,
+                                "layout|x": 250,
+                                "layout|y": 50,
+                                "name": "departName",
+                                "readOnly": false,
+                                "store": "uDeptInfoStore",
+                                "width": 180
+                            },
+                            "name": "MyComboBox10",
+                            "designerId": "deb4525c-d4a9-40d5-bfce-c65e2e9f76b9"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "项目可用资金",
+                                "id": "proCostRemain1",
+                                "labelWidth": 90,
+                                "layout|x": 410,
+                                "layout|y": 10,
+                                "name": null,
+                                "width": 180
+                            },
+                            "name": "MyDisplayField2",
+                            "designerId": "c9a9acdf-a10f-4345-ac93-bd99a1242f57"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 10,
+                        "height": 381,
+                        "layout": "absolute",
+                        "title": "日常报销费用明细",
+                        "width": 615
+                    },
+                    "name": "MyFieldSet24",
+                    "designerId": "54d15161-902e-4d83-b81e-3f265031136c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 270,
+                                "layout|y": 20,
+                                "padding": "0,0,0,0",
+                                "title": "",
+                                "width": 390
+                            },
+                            "name": "MyFieldSet5",
+                            "designerId": "0716f9f8-e850-4561-a25c-5bdc9c9ff8b5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|columns": 2,
+                                        "layout": "table",
+                                        "margin": "0,0,0,0",
+                                        "padding": "5,0,5,0",
+                                        "title": null,
+                                        "width": 398
+                                    },
+                                    "name": "MyFieldSet16",
+                                    "designerId": "63844d76-bfb0-4674-8d5c-09e1d0e44fda",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": 170,
+                                                "maxValue": null,
+                                                "minValue": 0,
+                                                "name": null,
+                                                "width": 120
+                                            },
+                                            "name": "MyNumberField27",
+                                            "designerId": "de10d9a8-672e-434e-bfe2-ed1a4546d7db"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": null,
+                                                "maxValue": null,
+                                                "minValue": 0,
+                                                "name": null,
+                                                "width": 50
+                                            },
+                                            "name": "MyNumberField16",
+                                            "designerId": "04783129-9d7d-4b8b-97ab-fecad061a4a4"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": null,
+                                                "margin": null,
+                                                "name": "clAimTaxi",
+                                                "width": 119
+                                            },
+                                            "name": "MyNumberField9",
+                                            "designerId": "17a16316-b73f-4540-9c3e-c0b4f8654683"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "差旅地住宿费",
+                                                "hideTrigger": true,
+                                                "labelWidth": 170,
+                                                "maxValue": null,
+                                                "minValue": 0,
+                                                "name": null,
+                                                "width": 230
+                                            },
+                                            "name": "MyNumberField17",
+                                            "designerId": "9d0f76d2-724e-4201-9861-6b29b1e8782d"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": null,
+                                                "margin": null,
+                                                "name": "clAimHotel",
+                                                "width": 120
+                                            },
+                                            "name": "MyNumberField10",
+                                            "designerId": "9693eb65-2d25-43bc-ab5d-e5799606bf57"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "差旅地餐饮费",
+                                                "hideTrigger": true,
+                                                "labelWidth": 170,
+                                                "margin": null,
+                                                "maxValue": null,
+                                                "minValue": 0,
+                                                "name": null,
+                                                "width": 230
+                                            },
+                                            "name": "MyNumberField18",
+                                            "designerId": "93e77369-bc62-44fc-b7bb-c5c10234e359"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": null,
+                                                "margin": null,
+                                                "name": "clAimFood",
+                                                "width": 120
+                                            },
+                                            "name": "MyNumberField11",
+                                            "designerId": "8a1cd5df-5f14-4922-947b-12f2fc2e2409"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "差旅地其他费用",
+                                                "hideTrigger": true,
+                                                "labelWidth": 170,
+                                                "margin": "0,0,0,0",
+                                                "maxValue": null,
+                                                "minValue": 0,
+                                                "name": null,
+                                                "width": 230
+                                            },
+                                            "name": "MyNumberField19",
+                                            "designerId": "f678462c-0606-4fa8-9e4d-317bb174eb4c"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": null,
+                                                "margin": "0,0,0,0",
+                                                "name": "clAimOther",
+                                                "width": 120
+                                            },
+                                            "name": "MyNumberField12",
+                                            "designerId": "c17b345b-901c-4126-a905-c1cda10a2415"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|columns": 2,
+                                        "layout": "table",
+                                        "margin": "0,0,0,0",
+                                        "padding": "5,0,5,0",
+                                        "title": "",
+                                        "width": ""
+                                    },
+                                    "name": "MyFieldSet15",
+                                    "designerId": "e2e6a919-0fe8-40d1-9ed2-fbca1f181d11",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "返程市内交通费",
+                                                "hideTrigger": true,
+                                                "labelWidth": 170,
+                                                "maxValue": null,
+                                                "minValue": 0,
+                                                "name": null,
+                                                "width": 230
+                                            },
+                                            "name": "MyNumberField13",
+                                            "designerId": "41801faf-9898-41d7-b7d1-60409a23d4b3"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": " ",
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": null,
+                                                "name": "clBackTaxi",
+                                                "width": 120
+                                            },
+                                            "name": "MyNumberField6",
+                                            "designerId": "d27b8381-c977-4749-8712-748e0c75d4f7"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": "返程长途交通费",
+                                                "hideTrigger": true,
+                                                "labelWidth": 170,
+                                                "margin": "0,0,0,0",
+                                                "maxValue": null,
+                                                "minValue": 0,
+                                                "name": "",
+                                                "width": 230
+                                            },
+                                            "name": "MyNumberField14",
+                                            "designerId": "dd36563e-9f3b-478e-adb8-5582cfd954aa"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "emptyText": null,
+                                                "fieldLabel": null,
+                                                "hideTrigger": true,
+                                                "labelWidth": null,
+                                                "margin": "0,0,0,0",
+                                                "name": "clBackTrain",
+                                                "width": 120
+                                            },
+                                            "name": "MyNumberField7",
+                                            "designerId": "d4b9355d-0166-4d89-9e8d-c194609ee6e1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|columns": 2,
+                                "layout": "table",
+                                "layout|x": 0,
+                                "layout|y": 310,
+                                "margin": "0,0,0,0",
+                                "padding": "5,0,5,0",
+                                "title": null,
+                                "width": 390
+                            },
+                            "name": "MyFieldSet14",
+                            "designerId": "b71046d3-a19b-44f4-9bfa-43956734ec27",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "editable": false,
+                                        "emptyText": null,
+                                        "fieldLabel": "合计（发票）费用",
+                                        "hideTrigger": true,
+                                        "labelWidth": 170,
+                                        "margin": "0,0,0,0",
+                                        "maxValue": null,
+                                        "minValue": 0,
+                                        "name": "clFapiao",
+                                        "width": 230
+                                    },
+                                    "name": "MyNumberField15",
+                                    "designerId": "67deaeb6-701e-4fc8-bc24-90041162ce20"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "editable": false,
+                                        "emptyText": null,
+                                        "fieldLabel": null,
+                                        "hideTrigger": true,
+                                        "id": "clBaoxiao1",
+                                        "labelWidth": null,
+                                        "margin": "0,0,0,0",
+                                        "name": "clBaoxiao",
+                                        "width": 120
+                                    },
+                                    "name": "MyNumberField26",
+                                    "designerId": "f5afa60c-a97e-4b81-a529-ed608b1fc993"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|x": 50,
+                                "layout|y": 0,
+                                "text": "费用类别"
+                            },
+                            "name": "MyLabel5",
+                            "designerId": "130774e5-3bee-47f0-9d57-e5c92d4e7f8d"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|x": 190,
+                                "layout|y": 0,
+                                "text": "票据数"
+                            },
+                            "name": "MyLabel6",
+                            "designerId": "60911af5-9e68-4203-b05d-2704dac646fb"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|x": 270,
+                                "layout|y": 0,
+                                "text": "金额（元）"
+                            },
+                            "name": "MyLabel7",
+                            "designerId": "c3531551-a9ad-44e8-b1e4-ee0edc6a8605"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 110,
+                                "layout|x": 400,
+                                "layout|y": 20,
+                                "title": "借还款",
+                                "width": 183
+                            },
+                            "name": "MyFieldSet22",
+                            "designerId": "837b8a99-af47-44a7-af59-f5b8d765079c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "editable": false,
+                                        "emptyText": "0",
+                                        "fieldLabel": "个人欠款",
+                                        "hideTrigger": true,
+                                        "labelWidth": 60,
+                                        "margin": "0,0,0,0",
+                                        "maxValue": null,
+                                        "minValue": 0,
+                                        "name": null,
+                                        "width": 150
+                                    },
+                                    "name": "MyNumberField23",
+                                    "designerId": "d43d7bd1-b09d-4674-bea8-3999239b82a2"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "editable": false,
+                                        "emptyText": "0",
+                                        "fieldLabel": "本次还款",
+                                        "hideTrigger": true,
+                                        "labelWidth": 60,
+                                        "margin": "0,0,0,0",
+                                        "maxValue": null,
+                                        "minValue": 0,
+                                        "name": "clHuankuan",
+                                        "width": 150
+                                    },
+                                    "name": "MyNumberField24",
+                                    "designerId": "0323f8bb-b8f2-42a3-ae0e-fc48c1859a5e"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "editable": false,
+                                        "emptyText": "0",
+                                        "fieldLabel": "借款剩余",
+                                        "hideTrigger": true,
+                                        "labelWidth": 60,
+                                        "margin": "0,0,0,0",
+                                        "maxValue": null,
+                                        "minValue": 0,
+                                        "name": null,
+                                        "width": 150
+                                    },
+                                    "name": "MyNumberField25",
+                                    "designerId": "0260fb80-6be7-4ddd-8a48-d5bec985a231"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|x": 400,
+                                "layout|y": 310,
+                                "width": 86
+                            },
+                            "name": "MyToolbar3",
+                            "designerId": "080e4faa-493c-445a-a1a8-5160218759c7",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "汇总计算"
+                                    },
+                                    "name": "MyButton9",
+                                    "designerId": "5abc4cfd-f075-4a90-a00d-4657774a9f9f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "name": "MyToolbar8",
+                    "designerId": "c62e9ce9-809a-4b37-b9f7-87903bc76166",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MyFill8",
+                            "designerId": "574ea82e-620c-4aa6-85eb-da85b2e543be"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "取消关闭"
+                            },
+                            "name": "MyButton26",
+                            "designerId": "ffd381e2-b45f-4a4f-b0ce-cb50ea183667",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "var win = Ext.getCmp('baoXiao_chailv');",
+                                            "win.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick1",
+                                    "designerId": "3496eed1-3b9e-41ef-8d19-8bec12191824"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 30
+                            },
+                            "name": "MySpacer8",
+                            "designerId": "b4e11889-6162-4094-8800-9d758514adeb"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "确认提交"
+                            },
+                            "name": "MyButton27",
+                            "designerId": "d7edee99-f8fe-4c7e-aea6-4ebfd1117aca",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "var applyUser = Ext.getCmp('applyUser').getValue();",
+                                            "var clAim = Ext.getCmp('clAim').getValue();",
+                                            "var cl_start = Ext.getCmp('clStart').getValue().substring(0,10);",
+                                            "var cl_end = Ext.getCmp('clEnd').getValue().substring(0,10);",
+                                            "Ext.getCmp('costDescript').setValue(\"报销\"+applyUser+cl_start+\"至\"+cl_end+clAim+\"差旅费用\");",
+                                            "var win = Ext.getCmp('baoXiao_chailv');",
+                                            "var myform = Ext.getCmp('baoXiao_chailvForm');",
+                                            "",
+                                            "if (myform.isValid())",
+                                            "{",
+                                            "",
+                                            "    myform.submit({",
+                                            "        //url : 'add_ProjectInfo',",
+                                            "        success : function (form, action)",
+                                            "        {",
+                                            "            Ext.Msg.alert('成功', '提交成功');",
+                                            "",
+                                            "            var mystore = Ext.StoreMgr.get('costInfoStore'); //获得store对象",
+                                            "            mystore.reload();",
+                                            "            win.close();",
+                                            "        },",
+                                            "        failure: function(form, action){",
+                                            "            Ext.Msg.alert('失败', '提交失败');",
+                                            "            win.close();",
+                                            "        }",
+                                            "    });",
+                                            "}",
+                                            "else{",
+                                            "    Ext.Msg.alert('注意', '填写的信息有误，请检查！');",
+                                            "}",
+                                            "",
+                                            "return;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick",
+                                    "designerId": "621a51bc-3bed-486e-93d0-342a37a7fd1e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "layout|flex": null,
+                                "name": "costType",
+                                "value": [
+                                    "\"差旅报销\""
+                                ]
+                            },
+                            "name": "MyHiddenField5",
+                            "designerId": "056c5a20-091e-4cba-9d12-4ca6a8a137e4"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "id": "costDescript1",
+                                "layout|flex": null,
+                                "name": "costDescript",
+                                "value": [
+                                    "\"差旅报销\""
+                                ]
+                            },
+                            "name": "MyHiddenField6",
+                            "designerId": "8429812b-a830-4663-bead-a304025503f1"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDb_projectInfoAddWindowFormAfterRender",
+                        "implHandler": [
+                            "//获取当前注册时间",
+                            "var registerdateField = Ext.getCmp('proId');",
+                            "var dateStr = \"\";",
+                            "var myDate = new Date();",
+                            "dateStr += myDate.getFullYear();    //获取完整的年份(4位,1970-????)",
+                            "dateStr += (myDate.getMonth()+1);       //获取当前月份(0-11,0代表1月)",
+                            "dateStr += myDate.getDate(); //获取当前日(1-31)",
+                            "dateStr += myDate.getHours();",
+                            "dateStr += myDate.getMinutes();",
+                            "",
+                            "registerdateField.setValue(dateStr);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "name": "onDb_projectInfoAddWindowFormAfterRender",
+                    "designerId": "da59d4c6-9bac-42b1-86ac-f3797c401705"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,918 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "notice_Manage",
+        "designer|userClassName": "notice_Manage",
+        "height": 588,
+        "id": null,
+        "layout": "fit",
+        "title": "内容管理",
+        "width": 866
+    },
+    "name": "notice_Browse1",
+    "designerId": "016d89f6-bf4a-496d-a725-979bfe9fb19e",
+    "viewControllerInstanceId": "9eb34fd3-4fb5-4e4b-9689-f6376c95656f",
+    "viewModelInstanceId": "e96037fd-3eed-475c-a739-df68e0f1c665",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0
+            },
+            "name": "MyTabPanel",
+            "designerId": "ba80c15c-7eae-45db-9fe2-d18f117f2382",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "已发布"
+                    },
+                    "name": "MyPanel",
+                    "designerId": "e13086c2-f832-416f-88f9-b2dd39f6fed4",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "cb344fbb-bf78-4547-b32c-b2847bb3c958"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "notice_NewsManageGrid",
+                                "store": "notice_newsStore",
+                                "title": null
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "b34c6257-6618-4282-8f68-1a313ac98936",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyRowNumberer1",
+                                    "designerId": "cdac0858-9212-4eab-a29a-d9ca02572f14"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "noticeColumn",
+                                        "text": "所属栏目",
+                                        "width": 120
+                                    },
+                                    "name": "MyColumn",
+                                    "designerId": "5aa69aad-5d00-4e9c-8095-9ca89d4f7436"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "noticeTitle",
+                                        "text": "标题",
+                                        "width": 250
+                                    },
+                                    "name": "MyColumn6",
+                                    "designerId": "e5abd8b8-9526-4a96-835a-2dc1fe7dedfa"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "noticeAuthor",
+                                        "text": "作者"
+                                    },
+                                    "name": "MyColumn7",
+                                    "designerId": "6ad17986-41fd-498c-9781-5edddfe3fb01"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "publishDate",
+                                        "format": "Y-m-d",
+                                        "text": "发表时间",
+                                        "width": 100
+                                    },
+                                    "name": "MyDateColumn",
+                                    "designerId": "011f2218-c4d5-43ed-be28-70158715910a"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "readCount",
+                                        "text": "阅读量"
+                                    },
+                                    "name": "MyColumn23",
+                                    "designerId": "28784ccd-47f4-4244-b3f4-347de2f3d27d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "editDate",
+                                        "format": "Y-m-d",
+                                        "text": "最近修改",
+                                        "width": 100
+                                    },
+                                    "name": "MyDateColumn1",
+                                    "designerId": "e37bfa10-551b-4ba4-b61f-f6cbe6af418e"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "attachmentFilename",
+                                        "text": "附件"
+                                    },
+                                    "name": "MyActionColumn",
+                                    "designerId": "7c235351-2b33-4e6b-85d4-7915926d1d59"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "description",
+                                        "text": "备注",
+                                        "width": 200
+                                    },
+                                    "name": "MyColumn5",
+                                    "designerId": "aa4b7c1b-dc9a-4373-a105-857840e14729"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "551a5a62-cdf1-4455-adda-5af8635bd7fa"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "name": "MyToolbar1",
+                                    "designerId": "e8fc4955-06c1-46fd-9ec8-5df89aafd255",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "id": "noticeNews_SearchText",
+                                                "layout|flex": null
+                                            },
+                                            "name": "MyTextField",
+                                            "designerId": "bbef72d2-f795-4185-9a09-12474cc1acfc"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/search.png",
+                                                "layout|flex": null,
+                                                "text": "查询"
+                                            },
+                                            "name": "MyButton",
+                                            "designerId": "c982e8af-1438-465f-8e0f-71af201861e2",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var searchKeyword = Ext.getCmp('noticeNews_SearchText').getValue();",
+                                                            "var mystore = Ext.StoreMgr.get('notice_newsStore'); //获得store对象",
+                                                            "//在load事件中添加参数",
+                                                            "mystore.load({",
+                                                            "    params :{searchKeyword : searchKeyword}",
+                                                            "});"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "cd7d53c5-63bf-40c3-82eb-4849f94d1f3c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/preview.png",
+                                                "layout|flex": null,
+                                                "text": "预览"
+                                            },
+                                            "name": "MyButton4",
+                                            "designerId": "d0440dc3-0a1d-48e9-9d38-f6e9289d5164"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Separator",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null
+                                            },
+                                            "name": "MySeparator",
+                                            "designerId": "52b877e3-25d9-416a-9683-a35f5dceb287"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/add.png",
+                                                "layout|flex": null,
+                                                "text": "添加"
+                                            },
+                                            "name": "MyButton1",
+                                            "designerId": "c6ca6f2f-87fe-4dfe-9829-c874281929c6",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var xtype = 'notice_Publish';",
+                                                            "var mainView = Ext.getCmp('mainView');",
+                                                            "mainView.removeAll();",
+                                                            "mainView.add(Ext.widget(xtype));"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "3576bc14-0f9a-4d7f-aba4-ae682373c8b9"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/edit.png",
+                                                "layout|flex": null,
+                                                "text": "修改"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "131b1b60-5b1c-4e94-ac1e-d75e639c2ec7",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "//获取数据",
+                                                            "var records = Ext.getCmp('notice_NewsManageGrid').getSelection();",
+                                                            "if (records.length === 0){",
+                                                            "    Ext.Msg.alert('提示', '请选择一条数据后再修改信息。');",
+                                                            "    return;",
+                                                            "} else if(records.length >1){",
+                                                            "    Ext.Msg.alert('提示', '每次只能修改一条信息，请重新选择。');",
+                                                            "    return;",
+                                                            "}",
+                                                            "//启动窗口",
+                                                            "var xtype = 'notice_Publish';",
+                                                            "var mainView = Ext.getCmp('mainView');",
+                                                            "mainView.removeAll();",
+                                                            "mainView.add(Ext.widget(xtype));",
+                                                            "",
+                                                            "//改变Ajax url",
+                                                            "var form = Ext.getCmp('notice_PublishForm').getForm();",
+                                                            "form.loadRecord(records[0]);",
+                                                            "form.url = 'update_NoticeNews';"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "f3fb1494-3a98-4636-879e-bcba746c527a"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/delete.png",
+                                                "layout|flex": null,
+                                                "text": "删除"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "45d7701b-b630-4a09-a191-cf924d00456e",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "//获取数据",
+                                                            "var records = Ext.getCmp('notice_NewsManageGrid').getSelection();",
+                                                            "if (records.length === 0){",
+                                                            "    Ext.Msg.alert('提示', '请选择一条数据后再点击删除按钮。');",
+                                                            "    return;",
+                                                            "}else if(records.length >1){",
+                                                            "    Ext.Msg.alert('提示', '每次只能删除一条文章。');",
+                                                            "    return;",
+                                                            "}",
+                                                            "var id = records[0].get(\"id\");",
+                                                            "var columnName= records[0].get(\"noticeTitle\");",
+                                                            "Ext.Msg.confirm('提示', '您正在删除<br/>[' +columnName+']。<br/> 确认删除？', getResult);",
+                                                            "",
+                                                            "var record = records[0];",
+                                                            "",
+                                                            "function getResult(confirm)",
+                                                            "{",
+                                                            "    console.log('confirm:', confirm);",
+                                                            "    if (confirm == \"yes\"){",
+                                                            "        Ext.Ajax.request(",
+                                                            "            {",
+                                                            "                url : 'del_NoticeToDraft',",
+                                                            "                params :",
+                                                            "                {",
+                                                            "                    id : record.get('id')",
+                                                            "                },",
+                                                            "                success : function (response){",
+                                                            "                    Ext.Msg.alert('成功提示', '记录删除成功。');",
+                                                            "                    var mystore = Ext.StoreMgr.get('notice_newsStore');",
+                                                            "                    mystore.load();",
+                                                            "                },",
+                                                            "                failure : function (response){",
+                                                            "                    Ext.Msg.alert('失败提示', '记录删除失败。');",
+                                                            "                }",
+                                                            "            });",
+                                                            "    }",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "3ac14a64-bcde-46f0-8ff1-0f35cf00efad"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "href": "http://localhost:8080/landuse/public/homeIndex.html",
+                                                "icon": "images/table/connect.png",
+                                                "layout|flex": null,
+                                                "text": "链接到对外发布平台"
+                                            },
+                                            "name": "MyButton10",
+                                            "designerId": "fa6eb045-5740-4527-a29f-9420bb68734f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.selection.CheckboxModel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyCheckboxSelectionModel",
+                                    "designerId": "cd42e677-e071-405a-aba7-2274f0e8a9f6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "草稿箱"
+                    },
+                    "name": "MyPanel1",
+                    "designerId": "8acc2c4b-7b12-49d7-b43e-b184fc4a62ce",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "ce9d4c6a-3a98-466c-9c21-a84d25dc8c40"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "notice_NewsDraftGrid",
+                                "store": "notice_newsDraftStore",
+                                "title": null
+                            },
+                            "name": "MyGridPanel",
+                            "designerId": "4040a291-e300-4e44-9b18-f3764b74906d",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyRowNumberer1",
+                                    "designerId": "660db9ee-d81a-4957-b923-1ac25a3f1d08"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "noticeColumn",
+                                        "text": "所属栏目",
+                                        "width": 120
+                                    },
+                                    "name": "MyColumn",
+                                    "designerId": "26eacd8d-765d-45cc-9716-9cfdbfa79d45"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "noticeTitle",
+                                        "text": "标题",
+                                        "width": 250
+                                    },
+                                    "name": "MyColumn6",
+                                    "designerId": "1fe03524-b56d-4d00-b372-405131d398ef"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "noticeAuthor",
+                                        "text": "作者"
+                                    },
+                                    "name": "MyColumn7",
+                                    "designerId": "adf95949-cf10-4df2-8d85-501081db9b96"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "publishDate",
+                                        "format": "Y-m-d",
+                                        "text": "发表时间",
+                                        "width": 100
+                                    },
+                                    "name": "MyDateColumn",
+                                    "designerId": "fe534dfb-7988-4cd2-93e5-e98f56296663"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "editDate",
+                                        "format": "Y-m-d",
+                                        "text": "最近修改",
+                                        "width": 100
+                                    },
+                                    "name": "MyDateColumn1",
+                                    "designerId": "c44a8b1b-78ab-4552-bc4f-231d754b8eca"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "attachmentFilename",
+                                        "text": "附件"
+                                    },
+                                    "name": "MyActionColumn",
+                                    "designerId": "81df5b60-e7c8-4b2d-b6a0-f8327323d793"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "description",
+                                        "text": "备注",
+                                        "width": 200
+                                    },
+                                    "name": "MyColumn5",
+                                    "designerId": "f892b440-279b-4a87-bd49-42206c326fce"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "1717cf1d-47a4-4117-8d93-9fa6de15a4af"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "name": "MyToolbar1",
+                                    "designerId": "ab50ab34-cbea-4901-867e-979052e727e6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "id": "noticeNews_draft_SearchText",
+                                                "layout|flex": null
+                                            },
+                                            "name": "MyTextField",
+                                            "designerId": "a79d8751-0dce-4e29-8081-6683c03833ee"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/search.png",
+                                                "layout|flex": null,
+                                                "text": "查询"
+                                            },
+                                            "name": "MyButton",
+                                            "designerId": "3b029b67-0824-42ab-b924-b43fb84f93e8",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var searchKeyword = Ext.getCmp('noticeNews_draft_SearchText').getValue();",
+                                                            "var mystore = Ext.StoreMgr.get('notice_newsDraftStore'); //获得store对象",
+                                                            "//在load事件中添加参数",
+                                                            "mystore.load({",
+                                                            "    params :{",
+                                                            "        searchKeyword : searchKeyword,",
+                                                            "        noticeState:'1'",
+                                                            "    }",
+                                                            "});"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "1a2f9b7a-4431-4bb0-bef8-25c098209c02"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/preview.png",
+                                                "layout|flex": null,
+                                                "text": "预览"
+                                            },
+                                            "name": "MyButton4",
+                                            "designerId": "e805c5e5-5392-4d99-a485-0e877a1c5a0a"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Separator",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null
+                                            },
+                                            "name": "MySeparator",
+                                            "designerId": "45341e6f-5246-493b-853a-4f07aafa4402"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/edit.png",
+                                                "layout|flex": null,
+                                                "text": "发布"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "083e17ac-f4da-48e7-8ace-2947f4cb47b8",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "//获取数据",
+                                                            "var records = Ext.getCmp('notice_NewsDraftGrid').getSelection();",
+                                                            "if (records.length === 0){",
+                                                            "    Ext.Msg.alert('提示', '请选择一条数据后再修改信息。');",
+                                                            "    return;",
+                                                            "} else if(records.length >1){",
+                                                            "    Ext.Msg.alert('提示', '每次只能修改一条信息，请重新选择。');",
+                                                            "    return;",
+                                                            "}",
+                                                            "//启动窗口",
+                                                            "var xtype = 'notice_Publish';",
+                                                            "var mainView = Ext.getCmp('mainView');",
+                                                            "mainView.removeAll();",
+                                                            "mainView.add(Ext.widget(xtype));",
+                                                            "",
+                                                            "//改变Ajax url",
+                                                            "var form = Ext.getCmp('notice_PublishForm').getForm();",
+                                                            "form.loadRecord(records[0]);",
+                                                            "form.url = 'update_NoticeNews';"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "0f149066-c36c-4ebb-a674-e6db9100863e"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "images/table/delete.png",
+                                                "layout|flex": null,
+                                                "text": "删除"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "6c98e03c-4a44-4b65-99b8-352354c62e7f",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "//获取数据",
+                                                            "var records = Ext.getCmp('notice_NewsDraftGrid').getSelection();",
+                                                            "if (records.length === 0){",
+                                                            "   Ext.Msg.alert('提示', '请选择一条数据后再点击删除按钮。');",
+                                                            "   return;",
+                                                            "}else if(records.length >1){",
+                                                            "   Ext.Msg.alert('提示', '每次只能删除一条文章。');",
+                                                            "   return;",
+                                                            "}",
+                                                            "var id = records[0].get(\"id\");",
+                                                            "var columnName= records[0].get(\"noticeTitle\");",
+                                                            "Ext.Msg.confirm('提示', '您正在删除<br/>[' +columnName+']。<br/> 确认删除？', getResult);",
+                                                            "",
+                                                            "",
+                                                            "function getResult(confirm)",
+                                                            "{",
+                                                            "    console.log('confirm:', confirm);",
+                                                            "    if (confirm == \"yes\"){",
+                                                            "        Ext.Ajax.request(",
+                                                            "        {",
+                                                            "            url : 'del_NoticeToDelete',",
+                                                            "            params :",
+                                                            "            {",
+                                                            "                id : id",
+                                                            "            },",
+                                                            "            success : function (response){",
+                                                            "                Ext.Msg.alert('成功提示', '记录删除成功。');",
+                                                            "                var mystore = Ext.StoreMgr.get('notice_newsStore');",
+                                                            "                mystore.load();",
+                                                            "            },",
+                                                            "            failure : function (response){",
+                                                            "                Ext.Msg.alert('失败提示', '记录删除失败。');",
+                                                            "            }",
+                                                            "        });",
+                                                            "    }",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "e20d8741-2dbb-455f-b3d8-54067f1a2f53"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.selection.CheckboxModel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyCheckboxSelectionModel",
+                                    "designerId": "ccf2edd2-cbf4-4d93-ac5d-77a9c011dae7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "已删除"
+                    },
+                    "name": "MyPanel2",
+                    "designerId": "e86bc556-463c-4668-95ef-19e882b30886",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig2",
+                            "designerId": "1d4cc764-de64-419c-ab95-b2f8667a5dee"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

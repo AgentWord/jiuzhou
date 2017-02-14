@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "achievement_importwin",
+        "designer|userClassName": "achievement_importWinViewController"
+    },
+    "designerId": "9bdc65ae-2a14-4bb9-b669-7fedbd454250"
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "projectmanagement",
+        "designer|userClassName": "chaiLuBaoXiaoViewModel1"
+    },
+    "name": "chaiLuBaoXiaoViewModel1",
+    "designerId": "8c36e090-b416-4dea-841a-5e21f19ae51c"
+}

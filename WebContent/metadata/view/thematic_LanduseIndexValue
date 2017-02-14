@@ -1,0 +1,435 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userAlias": "thematic_LanduseIndexValue",
+        "designer|userClassName": "thematic_LanduseIndexValue",
+        "height": 741,
+        "id": null,
+        "layout": "border",
+        "title": "开发区评价指标变化统计分析",
+        "width": 786
+    },
+    "name": "thematic_LanduseConstructionChangeTrend1",
+    "designerId": "d1b9c31a-3f2b-4935-814a-4b993b930478",
+    "viewControllerInstanceId": "4a47206f-5e1d-41d3-b1bf-d71a875dbf42",
+    "viewModelInstanceId": "1c79a484-2db3-42e3-b65c-336303a1e602",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "layout|region": "center"
+            },
+            "name": "MyTabPanel3",
+            "designerId": "020a7266-9764-4b01-85ae-89da7c4c9e49",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "border",
+                        "title": "评价指标统计"
+                    },
+                    "name": "MyPanel24",
+                    "designerId": "aa6bb4d0-6c83-4c3e-9a0c-6b50159f0c4d",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": [
+                                    "<div id = \"thematic_LanduseIndexValue_echart\" class=\"echartsDiv\"></div>"
+                                ],
+                                "layout": "fit",
+                                "layout|region": "center",
+                                "layout|split": true,
+                                "title": null
+                            },
+                            "name": "MyPanel",
+                            "designerId": "76b17c9b-7c9d-457b-b0fc-de01f9110020",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPanelAfterRender1",
+                                        "implHandler": [
+                                            "/*var head = document.getElementsByTagName('head')[0];",
+                                            "var script= document.createElement(\"script\");",
+                                            "script.type = \"text/javascript\";",
+                                            "script.src=\"echarts/thematic_LanduseConstructionChange_DLMC.js\";//\"mapjs/dataImport.js\";//",
+                                            "head.appendChild(script);*/"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPanelAfterRender1",
+                                    "designerId": "c0b1193f-d2c6-49fb-9bd2-4ca754e04bb8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapsed": true,
+                                "collapsible": true,
+                                "dock": null,
+                                "height": 150,
+                                "id": "thematic_LanduseIndexValue_Grid",
+                                "layout|region": "south",
+                                "layout|split": true,
+                                "store": null,
+                                "title": "历年评价指标值统计数据"
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "67918407-5d70-4328-8512-7435dc6d4064",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "16ac6225-7607-46ae-8cdb-e9979fd27710"
+                                },
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyRowNumberer1",
+                                    "designerId": "50b03e8f-69a9-4323-9463-e13afae20728"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThematic_LCCT_GridActivate",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "activate",
+                                        "scope": "me"
+                                    },
+                                    "name": "onThematic_LCCT_GridActivate",
+                                    "designerId": "eef380b1-1514-4051-8327-cbd4b2b5ed15"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig9",
+                            "designerId": "5c4bf12f-ee69-4579-8d94-e14f42aff39c"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelActivate",
+                                "implHandler": [
+                                    "/*",
+                                    "var head = document.getElementsByTagName('head')[0];",
+                                    "        var script= document.createElement(\"script\");",
+                                    "        script.type = \"text/javascript\";",
+                                    "        script.src=\"mapjs/thematic_LanduseConstructionChange_DLMC_map.js\";//\"mapjs/dataImport.js\";//",
+                                    "        head.appendChild(script);",
+                                    "var head = document.getElementsByTagName('head')[0];",
+                                    "var script= document.createElement(\"script\");",
+                                    "script.type = \"text/javascript\";",
+                                    "script.src=\"echarts/thematic_LanduseConstructionChange_DLMC.js\";//\"mapjs/dataImport.js\";//",
+                                    "head.appendChild(script);*/"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "name": "onPanelActivate",
+                            "designerId": "32667796-24cd-471a-ab4a-a8aa8cf07120"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar3",
+            "designerId": "2b1abd1a-40f1-4c46-8ae4-c82c2d583cad",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": null,
+                        "fieldLabel": "指标类型",
+                        "hidden": true,
+                        "id": "thematicIndexType_KFQCombo",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "store": [
+                            "['指标现状值','指标标准化' ]"
+                        ],
+                        "valueField": "kfqType",
+                        "width": 163
+                    },
+                    "name": "MyComboBox5",
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "6d8df483-ec20-478b-888b-7b402cd1b1dd"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "kfqName",
+                        "fieldLabel": "开发区",
+                        "id": "thematicIndexValue_KFQCombo",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "renderData": [
+                            "return [",
+                            "    {\"name\": \"2016\",\"value\": \"2016\"},",
+                            "    {\"name\": \"2015\",\"value\": \"2015\"},",
+                            "    {\"name\": \"2014\",\"value\": \"2014\"},",
+                            "    {\"name\": \"2013\",\"value\": \"2013\"},",
+                            "    {\"name\": \"2012\",\"value\": \"2012\"},",
+                            "    {\"name\": \"2011\",\"value\": \"2011\"},",
+                            "    {\"name\": \"2010\",\"value\": \"2010\"}",
+                            "];",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "store": "landIndexIntensityValueStore",
+                        "valueField": "kfqType",
+                        "width": 250
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "c0783fdf-2e96-4370-8b36-2d4284587ed0"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "name",
+                        "fieldLabel": "起始年份",
+                        "id": "thematicLCCT_StartYearCombo1",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "renderData": [
+                            "return [",
+                            "    {\"name\": \"2016\",\"value\": \"2016\"},",
+                            "    {\"name\": \"2015\",\"value\": \"2015\"},",
+                            "    {\"name\": \"2014\",\"value\": \"2014\"},",
+                            "    {\"name\": \"2013\",\"value\": \"2013\"},",
+                            "    {\"name\": \"2012\",\"value\": \"2012\"},",
+                            "    {\"name\": \"2011\",\"value\": \"2011\"},",
+                            "    {\"name\": \"2010\",\"value\": \"2010\"}",
+                            "];",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "store": "tmematic_LCCT_StartYearStore",
+                        "value": [
+                            "'2012'"
+                        ],
+                        "valueField": "value",
+                        "valueNotFoundText": "时间超出范围",
+                        "width": 150
+                    },
+                    "name": "MyComboBox3",
+                    "designerId": "e93c6da8-e529-44bc-a168-547e057f5a76"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "name",
+                        "fieldLabel": "截止年份",
+                        "id": "thematicLCCT_EndYearCombo1",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "renderData": [
+                            "return [",
+                            "    {\"name\": \"2016\",\"value\": \"2016\"},",
+                            "    {\"name\": \"2015\",\"value\": \"2015\"},",
+                            "    {\"name\": \"2014\",\"value\": \"2014\"},",
+                            "    {\"name\": \"2013\",\"value\": \"2013\"},",
+                            "    {\"name\": \"2012\",\"value\": \"2012\"},",
+                            "    {\"name\": \"2011\",\"value\": \"2011\"},",
+                            "    {\"name\": \"2010\",\"value\": \"2010\"}",
+                            "];",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "store": "tmematic_LCCT_EndYearStore",
+                        "value": [
+                            "'2013'"
+                        ],
+                        "valueField": "value",
+                        "width": 150
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "e59a6e5e-bd76-4279-b98b-16baaa160721"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "thematicLCCT_SubmitButton1",
+                        "layout|flex": null,
+                        "text": "统计分析"
+                    },
+                    "name": "MyButton",
+                    "designerId": "bfeebf02-c633-4f28-bb46-7cdf7e9fbcc4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "        var head = document.getElementsByTagName('head')[0];",
+                                    "        var script= document.createElement(\"script\");",
+                                    "        script.type = \"text/javascript\";",
+                                    "        script.src=\"mapjs/thematic_LanduseEvaluationIndex_NO1_map.js\";//\"mapjs/dataImport.js\";//",
+                                    "        head.appendChild(script);"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "72ece90e-7816-4dd0-9b3c-02d3afd4870f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "layout|flex": null,
+                        "text": "测试导入数据库"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "275cd8a9-08d9-43db-8e59-3c71cba4f908",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "//加入地图的js文件",
+                                    "var head = document.getElementsByTagName('head')[0];",
+                                    "var script= document.createElement(\"script\");",
+                                    "script.type = \"text/javascript\";",
+                                    "script.src=\"mapjs/thematic_LanduseConstructionClassicStatistic.js\";//thematic_LanduseConstructionChangeTrend_map.js",
+                                    "head.appendChild(script);",
+                                    "Ext.Msg.alert(\"提示\",\"同步完成\");"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "319ae9a7-e8cc-4eab-b449-2001f1c0647b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

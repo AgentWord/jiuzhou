@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "projectmanagement",
+        "designer|userClassName": "chaiLuBaoXiaoViewController1"
+    },
+    "name": "chaiLuBaoXiaoViewController1",
+    "designerId": "77c1fa50-54e1-4b7d-b342-693fcea3ae53"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taskmation",
+        "designer|userClassName": "taskMationViewModel"
+    },
+    "designerId": "1095bd55-5516-455c-84b2-3c65336efd34"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "zdxx_change",
+        "designer|userClassName": "zdxx_changeViewController"
+    },
+    "designerId": "291d3403-41e0-4a33-b5c8-b47f8126eaef"
+}

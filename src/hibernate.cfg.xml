@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="jiuzhou">
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">noroot</property>
+        <property name="hibernate.connection.url">jdbc:mysql://202.112.95.178:7712/caiwu</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <mapping resource="cn/mutu/land/model/UDeptInfo.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/NoticeColumns.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/CostDetail.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/UUserRole.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/UUserInfo.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/URightInfo.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/NoticeNews.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/URoleRight.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/ProjectManagement.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/URoleInfo.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/AchievementFile.hbm.xml" />
+        <mapping resource="cn/mutu/land/model/EmployeeManagement.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

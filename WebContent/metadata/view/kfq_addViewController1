@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "kfq_preview",
+        "designer|userClassName": "kfq_addViewController1"
+    },
+    "name": "kfq_addViewController1",
+    "designerId": "d67a52dd-3df7-42fb-b8b3-35a323f4c1c4"
+}

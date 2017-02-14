@@ -1,0 +1,452 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "system_MapManage",
+        "designer|userClassName": "system_MapManage",
+        "height": 588,
+        "id": null,
+        "layout": "fit",
+        "title": "地图管理",
+        "width": 786
+    },
+    "name": "system_MapManage1",
+    "designerId": "6a377d2e-c931-4a27-b10b-935e9a968f8f",
+    "viewControllerInstanceId": "53a92a67-d3aa-405d-9903-9ffee7b51526",
+    "viewModelInstanceId": "fd45e3ed-721c-46bf-91e3-7249e83880af",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "system_MapManageGrid",
+                "store": "systemManageMapStore",
+                "title": null
+            },
+            "name": "MyGridPanel2",
+            "designerId": "e4ab00f2-c4fb-4252-be62-6aaa7abf3432",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyRowNumberer",
+                    "designerId": "8d3fb5e1-1d54-4522-8067-4325db25da3f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "mapName",
+                        "text": "名称",
+                        "width": 250
+                    },
+                    "name": "MyColumn8",
+                    "designerId": "e2c297ec-9533-4ccc-a8b0-f6c22e75484f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "mapGroup",
+                        "text": "标签信息",
+                        "width": 250
+                    },
+                    "name": "MyColumn12",
+                    "designerId": "db7466ba-e25f-4020-b513-fc44f8f3f342"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "mapKey",
+                        "text": "键值",
+                        "width": 150
+                    },
+                    "name": "MyColumn10",
+                    "designerId": "149083f6-27ca-4988-91f6-d58c8053681b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "mapUrl",
+                        "text": "图层地址",
+                        "width": 500
+                    },
+                    "name": "MyColumn11",
+                    "designerId": "12693279-fbdb-4028-86d2-5ba3b824a688"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "description",
+                        "text": "备注",
+                        "width": 200
+                    },
+                    "name": "MyColumn9",
+                    "designerId": "e8e35f2a-6081-4fab-918a-1dd92be4479c"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView2",
+                    "designerId": "a3273ced-1a1a-4eb5-86c8-8ff729645998"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "474f6673-827a-4490-a066-2498b9e3ace0",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "id": "system_MapManage_SearchKey",
+                                "layout|flex": null
+                            },
+                            "name": "MyTextField",
+                            "designerId": "296064d7-b27c-4dd4-9080-78346cad7560"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "images/table/search.png",
+                                "layout|flex": null,
+                                "text": "查询"
+                            },
+                            "name": "MyButton",
+                            "designerId": "29c0de64-104b-40de-8454-cde72dace568",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "var getKeyword = Ext.getCmp('system_MapManage_SearchKey').getValue();",
+                                            "var mystore = Ext.StoreMgr.get('systemManageMapStore'); //获得store对象",
+                                            "//在load事件中添加参数",
+                                            "mystore.load({",
+                                            "    params :{searchKeyword : getKeyword}",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick",
+                                    "designerId": "630c4c16-e682-4e6f-b1a6-2f1c0cb0e08f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "images/table/preview.png",
+                                "layout|flex": null,
+                                "text": "预览"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "f2555e7b-e074-4528-973f-2a4ab39e4eec"
+                        },
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MySeparator",
+                            "designerId": "8dcb8cbb-6f3c-4a47-89c6-94b8a78d3479"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "images/table/add.png",
+                                "layout|flex": null,
+                                "text": "添加"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "d284a993-26d1-4f99-8f7a-99e7e742f851",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "var win = Ext.widget('system_MapAddWindow');",
+                                            "win.show();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick1",
+                                    "designerId": "eaf23115-bcf6-44ed-97e5-83ea32843b4d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "images/table/edit.png",
+                                "layout|flex": null,
+                                "text": "修改"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "624d96f1-1cb8-432d-8f38-f020ee88dd33",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick2",
+                                        "implHandler": [
+                                            "//获取数据",
+                                            "var models = Ext.getCmp('system_MapManageGrid').getSelection();",
+                                            "if (models.length === 0){",
+                                            "    Ext.Msg.alert('提示', '请选择一条数据后再修改信息。');",
+                                            "    return;",
+                                            "} else if(models.length >1){",
+                                            "    Ext.Msg.alert('提示', '每次只能修改一条信息，请重新选择。');",
+                                            "    return;",
+                                            "}",
+                                            "//启动窗口",
+                                            "var win = Ext.widget('system_MapAddWindow');",
+                                            "win.setTitle('修改信息');",
+                                            "win.show();",
+                                            "",
+                                            "//改变Ajax url",
+                                            "var form = Ext.getCmp('system_MapAddForm').getForm();",
+                                            "form.loadRecord(models[0]);",
+                                            "form.url = 'update_Map';"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick2",
+                                    "designerId": "234d179d-a5e1-44c0-acb8-d3fe964ac0e9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "images/table/delete.png",
+                                "layout|flex": null,
+                                "text": "删除"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "a3de47b2-2ff6-468e-a94f-49281193b26a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick3",
+                                        "implHandler": [
+                                            "//获取数据",
+                                            "var records = Ext.getCmp('system_MapManageGrid').getSelection();",
+                                            "if (records.length === 0){",
+                                            "   Ext.Msg.alert('提示', '请选择一条数据后再点击删除按钮。');",
+                                            "   return;",
+                                            "}",
+                                            "var  ids =new Array(records.length);",
+                                            "for(var i = 0;i<records.length;i++){",
+                                            "    ids[i] = records[i].get(\"mapId\");",
+                                            "}",
+                                            "if(ids.length ==1){",
+                                            "    Ext.Msg.confirm('提示', '您正在删除地图：' + records[0].get('mapName') + '，<br/> 地图链接为：'+records[0].get('mapUrl')+'，<br/> 确认删除？', getResult);",
+                                            "}else{",
+                                            "    Ext.Msg.confirm('提示', '您正在删除<br/>[' +ids.length+']组地图数据。<br/> 确认删除？', getResult);",
+                                            "}",
+                                            "",
+                                            "",
+                                            "function getResult(confirm)",
+                                            "{",
+                                            "    console.log('confirm:', confirm);",
+                                            "    if (confirm == \"yes\"){",
+                                            "        Ext.Ajax.request(",
+                                            "        {",
+                                            "            url : 'del_MapById',",
+                                            "            params :",
+                                            "            {",
+                                            "                mapIds : ids",
+                                            "            },",
+                                            "            success : function (response){",
+                                            "                Ext.Msg.alert('成功提示', '记录删除成功。');",
+                                            "                var mystore = Ext.StoreMgr.get('systemManageMapStore');",
+                                            "                mystore.load();",
+                                            "            },",
+                                            "            failure : function (response){",
+                                            "                Ext.Msg.alert('失败提示', '记录删除失败。');",
+                                            "            }",
+                                            "        });",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick3",
+                                    "designerId": "2082bde7-a247-456a-8040-3231437edb7b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MySeparator1",
+                            "designerId": "fb028a6e-7e09-4e55-a081-d64e835187b0"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "images/table/attr.png",
+                                "layout|flex": null,
+                                "text": "中英文对照设置"
+                            },
+                            "name": "MyButton6",
+                            "designerId": "3a65eac0-ccb0-421b-8cbe-68034f4ed1e8",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick31",
+                                        "implHandler": [
+                                            "Ext.widget('sys_MapAttrNameIndexWindow').show();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onButtonClick31",
+                                    "designerId": "9c4953e0-8c7d-4b7c-b035-41c771423665"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyCheckboxSelectionModel1",
+                    "designerId": "00df3abd-28f9-498c-9637-17e3bbe7d190"
+                }
+            ]
+        }
+    ]
+}

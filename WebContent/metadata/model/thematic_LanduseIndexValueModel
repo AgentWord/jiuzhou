@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "thematic_LanduseIndexValueModel"
+    },
+    "name": "thematic_LCC_PieModel1",
+    "designerId": "f73eb319-5bbf-45ad-af76-eb2b34e8b895",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField2",
+            "designerId": "e68ca456-4db8-4009-8781-3903d43e091f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField5",
+            "designerId": "18f4417c-97b5-4c04-96de-8f892117f6e5"
+        }
+    ]
+}

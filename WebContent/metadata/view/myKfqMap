@@ -1,0 +1,444 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "myKfqMap",
+        "designer|userClassName": "myKfqMap",
+        "height": 671,
+        "id": null,
+        "layout": "border",
+        "title": "开发区概况",
+        "width": 982
+    },
+    "name": "survey_Landuse1",
+    "designerId": "432b9b35-56fd-4fde-8437-8242d719bc21",
+    "viewControllerInstanceId": "9c28e495-a6bd-4f82-905a-cb6de88b2365",
+    "viewModelInstanceId": "b2fd1140-1817-43fc-80f4-202b52bdfb03",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": [
+                    "<div id = \"myMapDiv\" style = \"width=100%;height:100%;\"></div>"
+                ],
+                "id": "survey_Landuse_MapPanel1",
+                "layout": "fit",
+                "layout|region": "center",
+                "layout|split": true,
+                "title": ""
+            },
+            "name": "MyPanel6",
+            "designerId": "e6e45899-87d5-4117-beb3-5fe1b1dfd29e",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPanelAfterRender1",
+                        "implHandler": [
+                            "// //加入地图的js文件",
+                            "// var head = document.getElementsByTagName('head')[0];",
+                            "// var script= document.createElement(\"script\");",
+                            "// script.type = \"text/javascript\";",
+                            "// script.src=\"mapjs/homeMap.js\";",
+                            "// head.appendChild(script);",
+                            "//加入地图的js文件",
+                            "var head = document.getElementsByTagName('head')[0];",
+                            "var script= document.createElement(\"script\");",
+                            "script.type = \"text/javascript\";",
+                            "script.src=\"mapjs/myKfqMap.js\";",
+                            "head.appendChild(script);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "name": "onPanelAfterRender1",
+                    "designerId": "857fc8a8-7fff-4ab4-a9a1-87722cb00921"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar7",
+                    "designerId": "b7dd4374-807f-4860-a342-4ffcc4d00809",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "name",
+                                "fieldLabel": "选择开发区",
+                                "id": "survey_KfqArea_Combo2",
+                                "layout|flex": null,
+                                "store": "thematic_LCCT_KFQStore",
+                                "submitValue": false,
+                                "valueField": "value"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "96c667ba-30f7-4fdd-9eb4-b7be48279451",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange11",
+                                        "implHandler": [
+                                            "var store = Ext.StoreMgr.get('survey_IndexCurrent_MapStore');",
+                                            "store.clearFilter();",
+                                            "store.filter('mapKey',newValue);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxChange11",
+                                    "designerId": "05f70ae8-0fb5-440e-89d2-6f4454af6fa2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "mapName",
+                                "fieldLabel": "选择年份",
+                                "id": "survey_layerUrls_Combo2",
+                                "labelWidth": 60,
+                                "layout|flex": null,
+                                "name": "",
+                                "store": "survey_IndexCurrent_MapStore",
+                                "submitValue": false,
+                                "valueField": "mapUrl",
+                                "width": 248
+                            },
+                            "name": "MyComboBox2",
+                            "designerId": "b94289c8-66db-4434-b535-7d60f7c266fa",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSurvey_layerUrls_Combo2Change",
+                                        "implHandler": [
+                                            "//console.log(\"地图的地址：\"+newValue);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onSurvey_layerUrls_Combo2Change",
+                                    "designerId": "8440856d-0209-4b40-8805-87d67143c51d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "images/table/preview1.png",
+                                "layout|flex": null,
+                                "text": "查看开发区详情"
+                            },
+                            "name": "MyButton11",
+                            "designerId": "fd932858-3052-4951-b5d8-b2f4a60b7635",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var kfqmc=Ext.getCmp('survey_KfqArea_Combo2').getRawValue();",
+                                            "if(kfqmc){",
+                                            "var store=Ext.StoreMgr.get('kfqInfoStore');",
+                                            "var record=store.findRecord('kfqmc',kfqmc);",
+                                            "var win=Ext.widget('kfq_preview');",
+                                            "win.show();",
+                                            "Ext.getCmp('form_kfq_preview').loadRecord(record);",
+                                            "    Ext.getCmp('kfq_preview').setTitle(kfqmc+\"基本信息\");",
+                                            "}",
+                                            "else{",
+                                            "    Ext.Msg.alert(\"提示\",\"未选择开发区\");",
+                                            "    return;",
+                                            "}",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "a4487bee-346f-4c3f-87e3-edcdeae21d4c"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "hidden": true
+                    },
+                    "name": "MyToolbar2",
+                    "designerId": "edeb2f7d-5ef3-400a-bc21-82099faa69e2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "mapName",
+                                "fieldLabel": "选择开发区",
+                                "id": "survey_Landuse_LayerCombo1",
+                                "labelWidth": 80,
+                                "layout|flex": null,
+                                "store": "systemMapFeatureLayerStore",
+                                "valueField": "mapUrl",
+                                "width": 250
+                            },
+                            "name": "MyComboBox",
+                            "designerId": "855da924-2d98-48a1-b00e-e77df671cd00"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": null,
+                                "fieldLabel": "选择年份",
+                                "hidden": true,
+                                "id": "ent_check_yearCombo3",
+                                "labelWidth": 80,
+                                "layout|flex": null,
+                                "store": [
+                                    "['2016','2015','2014','2013','2012','2011','2010']"
+                                ],
+                                "valueField": "mapUrl",
+                                "width": 190
+                            },
+                            "name": "MyComboBox4",
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "5d15ba59-9556-416d-9622-e638ba72c0d3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsed": true,
+                "collapsible": true,
+                "height": 250,
+                "id": "survey_LanduseGrid1",
+                "layout|region": "south",
+                "layout|split": true,
+                "title": "宗地详情"
+            },
+            "name": "MyGridPanel",
+            "designerId": "66548d21-56b3-42ab-a1dd-7849775ef63b",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyRowNumberer",
+                    "designerId": "6b462eee-e455-4b9c-8675-2ffe8fa43b1b"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TBBH",
+                        "format": "0,000",
+                        "text": "图斑编号",
+                        "width": 80
+                    },
+                    "name": "MyNumberColumn1",
+                    "designerId": "21d40384-b513-4cff-be0c-6a634684893d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DLMC",
+                        "text": "地类名称",
+                        "width": 150
+                    },
+                    "name": "MyColumn5",
+                    "designerId": "4c5ce6a8-3078-43d5-9382-9981381823db"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DLDM",
+                        "text": "地类代码",
+                        "width": 80
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "e2b55333-e00f-45c3-b43c-13adbc67cde5"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "GHYT",
+                        "text": "规划用途",
+                        "width": 150
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "d6b9f876-9041-438d-9dff-076cd31ee7fc"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "GHDM",
+                        "text": "规划代码",
+                        "width": 80
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "a488a83b-d1a1-43ea-b1a4-b1a63f386fbe"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TDSYZ",
+                        "text": "土地使用者",
+                        "width": 150
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "5abe4247-0228-40dd-9134-ff51603f802d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "QS",
+                        "text": "权属"
+                    },
+                    "name": "MyColumn7",
+                    "designerId": "05be5ac9-594f-4136-bd59-380e93e9a356"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DLMJ",
+                        "text": "地类面积"
+                    },
+                    "name": "MyNumberColumn2",
+                    "designerId": "f68fc9e5-9267-4ac4-938b-92ea6e1912f3"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView",
+                    "designerId": "591c3bbb-3a3d-48a3-b3ef-b10c01c042c9"
+                }
+            ]
+        }
+    ]
+}

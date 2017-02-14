@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-12 21:29:16 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="cn.mutu.land.model.ProjectManagement" table="project_management" catalog="caiwu">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="proId" type="string">
+            <column name="pro_id" length="20">
+                <comment>&#207;&#238;&#196;&#191;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="proName" type="string">
+            <column name="pro_name" length="50">
+                <comment>&#207;&#238;&#196;&#191;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="proMoney" type="java.lang.Double">
+            <column name="pro_money" precision="22" scale="0">
+                <comment>&#207;&#238;&#196;&#191;&#186;&#207;&#205;&#172;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="proIncome" type="java.lang.Double">
+            <column name="pro_income" precision="22" scale="0">
+                <comment>&#207;&#238;&#196;&#191;&#181;&#189;&#213;&#203;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="proRemain" type="java.lang.Double">
+            <column name="pro_remain" precision="22" scale="0">
+                <comment>&#207;&#238;&#196;&#191;&#206;&#180;&#181;&#189;&#213;&#203;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="proCost" type="java.lang.Double">
+            <column name="pro_cost" precision="22" scale="0">
+                <comment>&#207;&#238;&#196;&#191;&#215;&#202;&#189;&#240;&#214;&#167;&#179;&#246;</comment>
+            </column>
+        </property>
+        <property name="proCostRemain" type="java.lang.Double">
+            <column name="pro_cost_remain" precision="22" scale="0">
+                <comment>&#207;&#238;&#196;&#191;&#215;&#202;&#189;&#240;&#202;&#163;&#211;&#224;</comment>
+            </column>
+        </property>
+        <property name="proZhuguan" type="string">
+            <column name="pro_zhuguan" length="50">
+                <comment>&#207;&#238;&#196;&#191;&#214;&#247;&#185;&#220;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="proHezuo" type="string">
+            <column name="pro_hezuo" length="50">
+                <comment>&#207;&#238;&#196;&#191;&#186;&#207;&#215;&#247;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="proStartTime" type="string">
+            <column name="pro_start_time" length="20">
+                <comment>&#207;&#238;&#196;&#191;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="proEndTime" type="string">
+            <column name="pro_end_time" length="10">
+                <comment>&#207;&#238;&#196;&#191;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="proManager" type="string">
+            <column name="pro_manager" length="10">
+                <comment>&#207;&#238;&#196;&#191;&#185;&#220;&#192;&#237;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="proTeam" type="string">
+            <column name="pro_team" length="200">
+                <comment>&#178;&#206;&#211;&#235;&#200;&#203;&#212;&#177;</comment>
+            </column>
+        </property>
+        <property name="proBz" type="string">
+            <column name="pro_bz" length="65535">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="proApplication" type="string">
+            <column name="pro_application" length="20">
+                <comment>&#207;&#238;&#196;&#191;&#201;&#234;&#199;&#235;&#204;&#225;&#189;&#187;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="proCheck" type="string">
+            <column name="pro_check" length="20">
+                <comment>&#207;&#238;&#196;&#191;&#201;&#243;&#186;&#203;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="proStatus" type="string">
+            <column name="pro_status" length="11">
+                <comment>
+                &#207;&#238;&#196;&#191;&#215;&#180;&#204;&#172;&#163;&#186;0&#201;&#234;&#199;&#235;&#163;&#172;1&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;&#191;&#170;&#202;&#188;&#163;&#172;2&#201;&#243;&#186;&#203;&#206;&#180;&#205;&#168;&#185;&#253;&#163;&#172;3&#207;&#238;&#196;&#191;&#214;&#213;&#214;&#185;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

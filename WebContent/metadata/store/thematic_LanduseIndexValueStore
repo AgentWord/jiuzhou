@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "thematic_LanduseIndexValueStore",
+        "model": "thematic_LCC_PieModel",
+        "storeId": "thematic_LanduseIndexValueStore"
+    },
+    "name": "thematic_LCCT_ChartStore1",
+    "designerId": "3354c5e9-37de-4676-9172-03718da42c53"
+}

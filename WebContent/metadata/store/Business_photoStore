@@ -1,0 +1,52 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "designer|userClassName": "Business_photoStore",
+        "model": "businessPhotoModel",
+        "storeId": "Business_photoStore"
+    },
+    "name": "Business_mapStore1",
+    "designerId": "3d997d68-15b3-4016-9ff4-45d119a5b6ff",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{",
+                    "    searchKeyword:\"\"",
+                    "}"
+                ],
+                "url": "get_photos"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "e3cd660c-5db1-4a2c-bf22-6ebcf5c1fcd0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "root"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "ddfa4ec9-2e8e-47de-8c8b-17cd5503b1b4"
+                }
+            ]
+        }
+    ]
+}
