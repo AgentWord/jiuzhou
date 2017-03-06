@@ -3,7 +3,9 @@ package cn.mutu.land.model;
 // Generated 2017-2-11 10:54:59 by Hibernate Tools 4.0.0
 
 import java.util.List;
+
 import javax.naming.InitialContext;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
@@ -12,6 +14,7 @@ import org.hibernate.criterion.Example;
 
 /**
  * Home object for domain model class UUserTrueInfo.
+ * 
  * @see cn.mutu.land.model.UUserTrueInfo
  * @author Hibernate Tools
  */

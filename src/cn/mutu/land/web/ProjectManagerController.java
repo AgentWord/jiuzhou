@@ -8,31 +8,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.mutu.land.common.Encoder;
 import cn.mutu.land.model.ProjectManagement;
-import cn.mutu.land.model.UUserInfo;
 import cn.mutu.land.service.ProjectManagerService;
-import cn.mutu.land.service.SystemUserManagerService;
 
 @Controller
 public class ProjectManagerController {
 	@Autowired
 	private ProjectManagerService ProjectManagerService;
 
-	
 	// ----------------------------------项目信息-------------------------------
 	// 查询项目信息
-	@RequestMapping(value = "/get_ProjectInfo")//,method=RequestMethod.POST)
+	@RequestMapping(value = "/get_ProjectInfo")
+	// ,method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> getProjectInfo(
 			@RequestParam("searchKeyword") String searchKeyword)
 			throws IOException {
 		searchKeyword = Encoder.encode(searchKeyword);
-		System.out.println("searchKeyword:"+searchKeyword);
+		System.out.println("searchKeyword:" + searchKeyword);
 		return this.ProjectManagerService.getProjectInfoList(searchKeyword);
 	}
 
@@ -48,7 +45,8 @@ public class ProjectManagerController {
 	// 添加项目信息
 	@RequestMapping(value = "/add_ProjectInfo")
 	@ResponseBody
-	public Map<String, Object> addProjectInfo(@RequestBody ProjectManagement projectManagement)
+	public Map<String, Object> addProjectInfo(
+			@RequestBody ProjectManagement projectManagement)
 			throws IOException {
 		this.ProjectManagerService.addProjectInfo(projectManagement);
 		Map<String, Object> userInfoResults = new HashMap<String, Object>();
@@ -60,11 +58,10 @@ public class ProjectManagerController {
 	// 修改用户信息
 	@RequestMapping(value = "/update_ProjectInfo")
 	@ResponseBody
-	public void updateProjectInfo(@RequestBody ProjectManagement projectManagement)
+	public void updateProjectInfo(
+			@RequestBody ProjectManagement projectManagement)
 			throws IOException {
 		this.ProjectManagerService.updateProjectInfo(projectManagement);
 	}
-
-	
 
 }

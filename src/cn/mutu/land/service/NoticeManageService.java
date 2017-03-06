@@ -1,6 +1,5 @@
 package cn.mutu.land.service;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -11,9 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import cn.mutu.land.common.SaveUploadFile;
 import cn.mutu.land.model.NoticeColumns;
 import cn.mutu.land.model.NoticeNews;
 
@@ -92,7 +89,7 @@ public class NoticeManageService {
 	public void noticeToDraft(String id) {
 		NoticeNews result = null;
 		Session session = sessionFactory.getCurrentSession();
-		try {		
+		try {
 			result = (NoticeNews) session.get(NoticeNews.class,
 					Integer.parseInt(id));
 			result.setNoticeState(1);
@@ -130,26 +127,28 @@ public class NoticeManageService {
 			e.printStackTrace();
 		}
 	}
-	// 更新阅读次数
-		public Map<String, Object> updateNoticeRead(String id) {
-			String hql = "UPDATE NoticeNews as notice";
-			if (!id.equals("")) {
-				String setStr = " SET notice.readCount=notice.readCount+1";
-				String hql2 = setStr+" WHERE notice.id=" + id;
-				//  +" limit 0,3"
-				hql += hql2;
-			}		
-			
-			org.hibernate.Query query = sessionFactory.getCurrentSession()
-					.createQuery(hql).setMaxResults(10);
-			
-			query.executeUpdate();
 
-			Map<String, Object> myMapResult = new TreeMap<String, Object>();
-			
-			myMapResult.put("success", true);
-			return myMapResult;
+	// 更新阅读次数
+	public Map<String, Object> updateNoticeRead(String id) {
+		String hql = "UPDATE NoticeNews as notice";
+		if (!id.equals("")) {
+			String setStr = " SET notice.readCount=notice.readCount+1";
+			String hql2 = setStr + " WHERE notice.id=" + id;
+			// +" limit 0,3"
+			hql += hql2;
 		}
+
+		org.hibernate.Query query = sessionFactory.getCurrentSession()
+				.createQuery(hql).setMaxResults(10);
+
+		query.executeUpdate();
+
+		Map<String, Object> myMapResult = new TreeMap<String, Object>();
+
+		myMapResult.put("success", true);
+		return myMapResult;
+	}
+
 	// --------------Columns---------------------------------
 	@SuppressWarnings("unchecked")
 	public Map<String, Object> getNoticeColumnsList() {

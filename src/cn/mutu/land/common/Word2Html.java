@@ -3,7 +3,6 @@ package cn.mutu.land.common;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,22 +16,6 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.apache.poi.hwpf.HWPFDocument;
-import org.apache.poi.hwpf.converter.PicturesManager;
-import org.apache.poi.hwpf.converter.WordToHtmlConverter;
-import org.apache.poi.hwpf.model.PicturesTable;
-import org.apache.poi.hwpf.usermodel.CharacterRun;
-import org.apache.poi.hwpf.usermodel.Paragraph;
-import org.apache.poi.hwpf.usermodel.Picture;
-import org.apache.poi.hwpf.usermodel.Range;
-import org.apache.poi.hwpf.usermodel.Table;
-import org.apache.poi.hwpf.usermodel.TableCell;
-import org.apache.poi.hwpf.usermodel.TableIterator;
-import org.apache.poi.hwpf.usermodel.TableRow;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.xmlbeans.impl.piccolo.io.FileFormatException;
-
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -42,15 +25,24 @@ import javax.xml.transform.stream.StreamResult;
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.converter.PicturesManager;
 import org.apache.poi.hwpf.converter.WordToHtmlConverter;
+import org.apache.poi.hwpf.model.PicturesTable;
+import org.apache.poi.hwpf.usermodel.CharacterRun;
+import org.apache.poi.hwpf.usermodel.Paragraph;
 import org.apache.poi.hwpf.usermodel.Picture;
 import org.apache.poi.hwpf.usermodel.PictureType;
-import org.apache.poi.xwpf.converter.core.BasicURIResolver;
+import org.apache.poi.hwpf.usermodel.Range;
+import org.apache.poi.hwpf.usermodel.Table;
+import org.apache.poi.hwpf.usermodel.TableCell;
+import org.apache.poi.hwpf.usermodel.TableIterator;
+import org.apache.poi.hwpf.usermodel.TableRow;
 import org.apache.poi.xwpf.converter.core.FileImageExtractor;
 import org.apache.poi.xwpf.converter.core.FileURIResolver;
 import org.apache.poi.xwpf.converter.xhtml.XHTMLConverter;
 import org.apache.poi.xwpf.converter.xhtml.XHTMLOptions;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.xmlbeans.impl.piccolo.io.FileFormatException;
 import org.w3c.dom.Document;
+
 /**
  * @Description: 利用poi将word简单的转换成html文件
  * @author 柯颖波
@@ -90,112 +82,117 @@ public class Word2Html {
 	/**
 	 * 临时文件路径
 	 */
-	private static String tempPath = "/upfile/" + File.separator + "transferFile" + File.separator;
+	private static String tempPath = "/upfile/" + File.separator
+			+ "transferFile" + File.separator;
 	/**
 	 * word文档名称
 	 */
 	private static String wordName = "";
 
-	
 	private static int cacheInt = 0;
-	
-	private static long curL = 0;	
-	
+
+	private static long curL = 0;
+
 	public static void main(String argv[]) {
 		try {
-			//wordToHtml("D:\\", "test_o/二、宾西土地集约利用评价技术报告2012终.doc");
-			//word2007tohtml("D:/小论文R8.docx","D:/test");
-			word2003tohtml("D:/test_o/二、宾西土地集约利用评价技术报告2012终.doc","D:/test");
-			
+			// wordToHtml("D:\\", "test_o/二、宾西土地集约利用评价技术报告2012终.doc");
+			// word2007tohtml("D:/小论文R8.docx","D:/test");
+			word2003tohtml("D:/test_o/二、宾西土地集约利用评价技术报告2012终.doc", "D:/test");
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * 时间戳
+	 * 
 	 * @return
 	 */
-	public static synchronized String getOnlyId(){
+	public static synchronized String getOnlyId() {
 		long curL = System.currentTimeMillis();
-		if(curL>curL){
+		if (curL > curL) {
 			cacheInt = 0;
-		}else{
+		} else {
 			cacheInt += 1;
 		}
-		return String.valueOf(curL)+String.valueOf(cacheInt);
+		return String.valueOf(curL) + String.valueOf(cacheInt);
 	}
-	
+
 	/**
 	 * 2003 word 转 html
+	 * 
 	 * @param inFile
 	 * @return
 	 * @throws FileNotFoundException
 	 */
-	public static String word2003tohtml(String filePathName,String outfilePath)  {
-		File inFile=new File(filePathName);
-		
-		String[] temp=filePathName.split("/");
-		String filename=temp[temp.length-1];
-		String resultPath=null;
-		try{			
+	public static String word2003tohtml(String filePathName, String outfilePath) {
+		File inFile = new File(filePathName);
+
+		String[] temp = filePathName.split("/");
+		String filename = temp[temp.length - 1];
+		String resultPath = null;
+		try {
 			String randomName = getOnlyId();
-			//转换后html中图片src的链接
-			final String baseUrl =outfilePath+"/"+randomName+"/";
+			// 转换后html中图片src的链接
+			final String baseUrl = outfilePath + "/" + randomName + "/";
 			File dirF = new File(baseUrl);
-			if(!dirF.exists()||!dirF.isDirectory()){
+			if (!dirF.exists() || !dirF.isDirectory()) {
 				dirF.mkdirs();
 			}
-			resultPath=outfilePath+"/"+randomName+".html";
+			resultPath = outfilePath + "/" + randomName + ".html";
 			OutputStream out = new FileOutputStream(resultPath);
-			
-			HWPFDocument wordDocument = new HWPFDocument(new FileInputStream(inFile));
-	        WordToHtmlConverter wordToHtmlConverter = new WordToHtmlConverter(DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument());  
-	        wordToHtmlConverter.setPicturesManager( new PicturesManager()         
-	         {  
-	             public String savePicture( byte[] content,  
-	                     PictureType pictureType, String suggestedName,  
-	                     float widthInches, float heightInches )  
-	             {  
-	                 return baseUrl+suggestedName;  
-	             }  
-	         } );  
-	        wordToHtmlConverter.processDocument(wordDocument);  
-	        List<Picture> pics=wordDocument.getPicturesTable().getAllPictures();  
-	        if(pics!=null){  
-	            for(int i=0;i<pics.size();i++){  
-	                Picture pic = (Picture)pics.get(i);  
-	                try {  
-	                    pic.writeImageContent(new FileOutputStream(baseUrl + pic.suggestFullFileName()));  
-	                } catch (FileNotFoundException e) {  
-	                    e.printStackTrace();  
-	                }    
-	            }  
-	        }  
-	        Document htmlDocument = wordToHtmlConverter.getDocument();  
-	        
-	        DOMSource domSource = new DOMSource(htmlDocument);  
-	        StreamResult streamResult = new StreamResult(out);  
-	  
-	        TransformerFactory tf = TransformerFactory.newInstance();  
-	        Transformer serializer = tf.newTransformer();  
-	        serializer.setOutputProperty(OutputKeys.ENCODING, "utf-8");  
-	        serializer.setOutputProperty(OutputKeys.INDENT, "yes");  
-	        serializer.setOutputProperty(OutputKeys.METHOD, "html");  
-	        serializer.transform(domSource, streamResult);  
-	        out.close();  
-	        //读取文件
-			BufferedReader in1 = new BufferedReader(new FileReader(
-					resultPath));
-			String str="";
-			String content="";
-			int l=outfilePath.length()+2;
-			while ((str = in1.readLine()) != null) {						
-				content+=str.replaceAll("<img src=(.{"+(l-20)+","+(l+20)+"})word03.","<img src=\"");						
+
+			HWPFDocument wordDocument = new HWPFDocument(new FileInputStream(
+					inFile));
+			WordToHtmlConverter wordToHtmlConverter = new WordToHtmlConverter(
+					DocumentBuilderFactory.newInstance().newDocumentBuilder()
+							.newDocument());
+			wordToHtmlConverter.setPicturesManager(new PicturesManager() {
+				public String savePicture(byte[] content,
+						PictureType pictureType, String suggestedName,
+						float widthInches, float heightInches) {
+					return baseUrl + suggestedName;
+				}
+			});
+			wordToHtmlConverter.processDocument(wordDocument);
+			List<Picture> pics = wordDocument.getPicturesTable()
+					.getAllPictures();
+			if (pics != null) {
+				for (int i = 0; i < pics.size(); i++) {
+					Picture pic = (Picture) pics.get(i);
+					try {
+						pic.writeImageContent(new FileOutputStream(baseUrl
+								+ pic.suggestFullFileName()));
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
 			}
-			if(content.indexOf("<img")!=-1){
+			Document htmlDocument = wordToHtmlConverter.getDocument();
+
+			DOMSource domSource = new DOMSource(htmlDocument);
+			StreamResult streamResult = new StreamResult(out);
+
+			TransformerFactory tf = TransformerFactory.newInstance();
+			Transformer serializer = tf.newTransformer();
+			serializer.setOutputProperty(OutputKeys.ENCODING, "utf-8");
+			serializer.setOutputProperty(OutputKeys.INDENT, "yes");
+			serializer.setOutputProperty(OutputKeys.METHOD, "html");
+			serializer.transform(domSource, streamResult);
+			out.close();
+			// 读取文件
+			BufferedReader in1 = new BufferedReader(new FileReader(resultPath));
+			String str = "";
+			String content = "";
+			int l = outfilePath.length() + 2;
+			while ((str = in1.readLine()) != null) {
+				content += str.replaceAll("<img src=(.{" + (l - 20) + ","
+						+ (l + 20) + "})word03.", "<img src=\"");
+			}
+			if (content.indexOf("<img") != -1) {
 				System.out.println(content.substring(content.indexOf("<img")));
-				FileOutputStream fos=new FileOutputStream(resultPath);
+				FileOutputStream fos = new FileOutputStream(resultPath);
 				BufferedWriter bw = null;
 				bw = new BufferedWriter(new OutputStreamWriter(fos, "utf-8"));
 				bw.write(content);
@@ -207,24 +204,27 @@ public class Word2Html {
 						fos.close();
 				} catch (IOException ie) {
 					ie.printStackTrace();
-				}	        
-			}else in1.close();
-		}catch(Exception e){
+				}
+			} else
+				in1.close();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        return resultPath;
-	}  	
-	
-	
+		return resultPath;
+	}
+
 	/**
 	 * 2007 word 转html
-	 * @param filePathName 文件路径加名称
-	 * @param outfilePath 输出文件路径
+	 * 
+	 * @param filePathName
+	 *            文件路径加名称
+	 * @param outfilePath
+	 *            输出文件路径
 	 */
-	public static String word2007tohtml(String filePathName,String outfilePath){
-		String[] temp=filePathName.split("/");
-		String filename=temp[temp.length-1];
-		String resultPath=null;
+	public static String word2007tohtml(String filePathName, String outfilePath) {
+		String[] temp = filePathName.split("/");
+		String filename = temp[temp.length - 1];
+		String resultPath = null;
 		try {
 			File f = new File(filePathName);
 			if (!f.exists()) {
@@ -239,10 +239,12 @@ public class Word2Html {
 
 					// 2) Prepare XHTML options (here we set the IURIResolver to
 					// load images from a "word/media" folder)
-					String randomName =getOnlyId();					
-					File imageFolderFile = new File(outfilePath+"/"+randomName+"/");
-					if(!imageFolderFile.exists())imageFolderFile.mkdir();
-					
+					String randomName = getOnlyId();
+					File imageFolderFile = new File(outfilePath + "/"
+							+ randomName + "/");
+					if (!imageFolderFile.exists())
+						imageFolderFile.mkdir();
+
 					XHTMLOptions options = XHTMLOptions.create().URIResolver(
 							new FileURIResolver(imageFolderFile));
 					options.setExtractor(new FileImageExtractor(imageFolderFile));
@@ -250,28 +252,32 @@ public class Word2Html {
 					options.setFragment(true);
 
 					// 3) Convert XWPFDocument to XHTML
-					resultPath=outfilePath+"/"+randomName+".html";
-					
+					resultPath = outfilePath + "/" + randomName + ".html";
+
 					File file = new File(resultPath);
 					OutputStream out = new FileOutputStream(file);
 					XHTMLConverter.getInstance()
 							.convert(document, out, options);
-					if(out!=null)out.close();
+					if (out != null)
+						out.close();
 					BufferedReader in1 = new BufferedReader(new FileReader(
 							resultPath));
-					String str="";
-					String content="";
-					int l=outfilePath.length()+2;
-					while ((str = in1.readLine()) != null) {						
-						content+=str.replaceAll("<img src=(.{"+(l-20)+","+(l+20)+"})word07.","<img src=\"");						
+					String str = "";
+					String content = "";
+					int l = outfilePath.length() + 2;
+					while ((str = in1.readLine()) != null) {
+						content += str.replaceAll("<img src=(.{" + (l - 20)
+								+ "," + (l + 20) + "})word07.", "<img src=\"");
 					}
-					if(content.indexOf("<img")!=-1){
-						System.out.println(content.substring(content.indexOf("<img")));
-						FileOutputStream fos=new FileOutputStream(file);
+					if (content.indexOf("<img") != -1) {
+						System.out.println(content.substring(content
+								.indexOf("<img")));
+						FileOutputStream fos = new FileOutputStream(file);
 						BufferedWriter bw = null;
-						bw = new BufferedWriter(new OutputStreamWriter(fos, "utf-8"));
+						bw = new BufferedWriter(new OutputStreamWriter(fos,
+								"utf-8"));
 						in1.close();
-						bw.write(content);						
+						bw.write(content);
 						try {
 							if (bw != null)
 								bw.close();
@@ -280,8 +286,9 @@ public class Word2Html {
 						} catch (IOException ie) {
 							ie.printStackTrace();
 						}
-					}else in1.close();
-					//writeFile(str,resultPath);
+					} else
+						in1.close();
+					// writeFile(str,resultPath);
 					// file.delete();
 				} else {
 					System.out.println("Enter only MS Office 2007+ files");
@@ -292,9 +299,6 @@ public class Word2Html {
 		}
 		return resultPath;
 	}
-	
-	
-	
 
 	/**
 	 * 读取每个文字样式
@@ -302,7 +306,6 @@ public class Word2Html {
 	 * @param fileName
 	 * @throws Exception
 	 */
-
 
 	private static void getWordAndStyle(String fileName) throws Exception {
 		FileInputStream in = new FileInputStream(new File(fileName));
@@ -384,7 +387,8 @@ public class Word2Html {
 				if (flag)
 					tempString += cr.text();
 				else {
-					String fontStyle = "<span style=\"font-family:" + cr.getFontName() + ";font-size:"
+					String fontStyle = "<span style=\"font-family:"
+							+ cr.getFontName() + ";font-size:"
 							+ cr.getFontSize() / 2 + "pt;";
 
 					if (cr.isBold())
@@ -401,8 +405,10 @@ public class Word2Html {
 						rgb[1] = (fontcolor >> 8) & 0xff; // green
 						rgb[2] = (fontcolor >> 16) & 0xff; // blue
 					}
-					fontStyle += "color: rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ");";
-					htmlText += fontStyle + "\">" + tempString + cr.text() + "</span>";
+					fontStyle += "color: rgb(" + rgb[0] + "," + rgb[1] + ","
+							+ rgb[2] + ");";
+					htmlText += fontStyle + "\">" + tempString + cr.text()
+							+ "</span>";
 					tempString = "";
 				}
 			}
@@ -419,7 +425,8 @@ public class Word2Html {
 	 * @param cr
 	 * @throws Exception
 	 */
-	private static void readTable(TableIterator it, Range rangetbl) throws Exception {
+	private static void readTable(TableIterator it, Range rangetbl)
+			throws Exception {
 
 		htmlTextTbl = "";
 		// 迭代文档中的表格
@@ -452,21 +459,26 @@ public class Word2Html {
 					for (int k = 0; k < td.numParagraphs(); k++) {
 						Paragraph para = td.getParagraph(k);
 						CharacterRun crTemp = para.getCharacterRun(0);
-						String fontStyle = "<span style=\"font-family:" + crTemp.getFontName() + ";font-size:"
-								+ crTemp.getFontSize() / 2 + "pt;color:" + crTemp.getColor() + ";";
+						String fontStyle = "<span style=\"font-family:"
+								+ crTemp.getFontName() + ";font-size:"
+								+ crTemp.getFontSize() / 2 + "pt;color:"
+								+ crTemp.getColor() + ";";
 
 						if (crTemp.isBold())
 							fontStyle += "font-weight:bold;";
 						if (crTemp.isItalic())
 							fontStyle += "font-style:italic;";
 
-						String s = fontStyle + "\">" + para.text().toString().trim() + "</span>";
+						String s = fontStyle + "\">"
+								+ para.text().toString().trim() + "</span>";
 						if (s == "") {
 							s = " ";
 						}
 						// System.out.println(s);
-						htmlTextTbl += "<td width=" + cellWidth + ">" + s + "</td>";
-						// System.out.println(i + ":" + j + ":" + cellWidth + ":" + s);
+						htmlTextTbl += "<td width=" + cellWidth + ">" + s
+								+ "</td>";
+						// System.out.println(i + ":" + j + ":" + cellWidth +
+						// ":" + s);
 					} // end for
 				} // end for
 			} // end for
@@ -483,7 +495,8 @@ public class Word2Html {
 	 * @param cr
 	 * @throws Exception
 	 */
-	private static void readPicture(PicturesTable pTable, CharacterRun cr) throws Exception {
+	private static void readPicture(PicturesTable pTable, CharacterRun cr)
+			throws Exception {
 		// 提取图片
 		Picture pic = pTable.extractPicture(cr, false);
 		BufferedImage image = null;// 图片对象
@@ -494,24 +507,27 @@ public class Word2Html {
 			picHeight = 500 * picHeight / picWidth;
 			picWidth = 500;
 		}
-		String style = " style='height:" + picHeight + "px;width:" + picWidth + "px'";
+		String style = " style='height:" + picHeight + "px;width:" + picWidth
+				+ "px'";
 
 		// 返回POI建议的图片文件名
 		String afileName = pic.suggestFullFileName();
-		//单元测试路径
+		// 单元测试路径
 		String directory = "images/" + wordName + "/";
-		//项目路径
-		//String directory = tempPath + "images/" + wordName + "/";
+		// 项目路径
+		// String directory = tempPath + "images/" + wordName + "/";
 		makeDir(projectRealPath, directory);// 创建文件夹
 
 		int picSize = cr.getFontSize();
 		int myHeight = 0;
 
 		if (afileName.indexOf(".wmf") > 0) {
-			OutputStream out = new FileOutputStream(new File(projectRealPath + directory + afileName));
+			OutputStream out = new FileOutputStream(new File(projectRealPath
+					+ directory + afileName));
 			out.write(pic.getContent());
 			out.close();
-			afileName = Wmf2Png.wmfToJpg(projectRealPath + directory + afileName);
+			afileName = Wmf2Png.wmfToJpg(projectRealPath + directory
+					+ afileName);
 
 			File file = new File(projectRealPath + directory + afileName);
 
@@ -524,23 +540,27 @@ public class Word2Html {
 			int pheight = image.getHeight();
 			int pwidth = image.getWidth();
 			if (pwidth > 500) {
-				htmlText += "<img style='width:" + pwidth + "px;height:" + myHeight + "px'" + " src=\"" + directory
-						+ afileName + "\"/>";
+				htmlText += "<img style='width:" + pwidth + "px;height:"
+						+ myHeight + "px'" + " src=\"" + directory + afileName
+						+ "\"/>";
 			} else {
 				myHeight = (int) (pheight / (pwidth / (picSize * 1.0)) * 1.5);
-				htmlText += "<img style='vertical-align:middle;width:" + picSize * 1.5 + "px;height:" + myHeight
-						+ "px'" + " src=\"" + directory + afileName + "\"/>";
+				htmlText += "<img style='vertical-align:middle;width:"
+						+ picSize * 1.5 + "px;height:" + myHeight + "px'"
+						+ " src=\"" + directory + afileName + "\"/>";
 			}
 
 		} else {
-			OutputStream out = new FileOutputStream(new File(projectRealPath + directory + afileName));
+			OutputStream out = new FileOutputStream(new File(projectRealPath
+					+ directory + afileName));
 			// pic.writeImageContent(out);
 			out.write(pic.getContent());
 			out.close();
 			// 处理jpg或其他（即除png外）
 			if (afileName.indexOf(".png") == -1) {
 				try {
-					File file = new File(projectRealPath + directory + afileName);
+					File file = new File(projectRealPath + directory
+							+ afileName);
 					image = ImageIO.read(file);
 					picHeight = image.getHeight();
 					picWidth = image.getWidth();
@@ -548,12 +568,14 @@ public class Word2Html {
 						picHeight = 500 * picHeight / picWidth;
 						picWidth = 500;
 					}
-					style = " style='height:" + picHeight + "px;width:" + picWidth + "px'";
+					style = " style='height:" + picHeight + "px;width:"
+							+ picWidth + "px'";
 				} catch (Exception e) {
 					// e.printStackTrace();
 				}
 			}
-			htmlText += "<img " + style + " src=\"" + directory + afileName + "\"/>";
+			htmlText += "<img " + style + " src=\"" + directory + afileName
+					+ "\"/>";
 		}
 		if (pic.getWidth() > 450) {
 			htmlText += "<br/>";
@@ -563,7 +585,8 @@ public class Word2Html {
 	private static boolean compareCharStyle(CharacterRun cr1, CharacterRun cr2) {
 		boolean flag = false;
 		if (cr1.isBold() == cr2.isBold() && cr1.isItalic() == cr2.isItalic()
-				&& cr1.getFontName().equals(cr2.getFontName()) && cr1.getFontSize() == cr2.getFontSize()) {
+				&& cr1.getFontName().equals(cr2.getFontName())
+				&& cr1.getFontSize() == cr2.getFontSize()) {
 			flag = true;
 		}
 		return flag;
@@ -661,7 +684,8 @@ public class Word2Html {
 		try {
 			File file = new File(projectPath + relativeFilePath);
 			if (file.exists()) {
-				if (file.getName().indexOf(".doc") == -1 || file.getName().indexOf(".docx") > 0) {
+				if (file.getName().indexOf(".doc") == -1
+						|| file.getName().indexOf(".docx") > 0) {
 					throw new FileFormatException("请确认文件格式为doc!");
 				} else {
 					wordName = file.getName();

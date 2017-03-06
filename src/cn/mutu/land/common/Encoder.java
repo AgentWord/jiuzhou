@@ -8,17 +8,17 @@ public class Encoder {
 		// TODO Auto-generated method stub
 
 	}
-	public static String encode(String value){
-		String value2="";
+
+	public static String encode(String value) {
+		String value2 = "";
 		try {
-			if(value!=null&&!value.equals(""))
-			 value2=new String(value.getBytes("ISO8859_1"),"UTF-8");
+			if (value != null && !value.equals(""))
+				value2 = new String(value.getBytes("ISO8859_1"), "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return value2; 
+		return value2;
 	}
 
 }
-

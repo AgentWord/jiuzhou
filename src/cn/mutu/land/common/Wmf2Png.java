@@ -34,7 +34,8 @@ public class Wmf2Png {
 	public static void main(String[] args) throws Exception {
 		// convert("F:\\SVN\\BobUtil\\web\\25177.wmf");
 		// System.out.println((20 / (21 * 1.0)));
-		// svgToPng("F:\\SVN\\BobUtil\\web\\25177.svg", "F:\\SVN\\BobUtil\\web\\25177.png");
+		// svgToPng("F:\\SVN\\BobUtil\\web\\25177.svg",
+		// "F:\\SVN\\BobUtil\\web\\25177.png");
 	}
 
 	/**
@@ -118,7 +119,8 @@ public class Wmf2Png {
 		transformer.setOutputProperty(OutputKeys.METHOD, "xml");
 		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "-//W3C//DTD SVG 1.0//EN");
+		transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC,
+				"-//W3C//DTD SVG 1.0//EN");
 		transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM,
 				"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd");
 		transformer.transform(new DOMSource(doc), new StreamResult(out));
@@ -145,7 +147,7 @@ public class Wmf2Png {
 			}
 		}
 		os.flush();
-		
+
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder;
 		builder = factory.newDocumentBuilder();
@@ -165,9 +167,11 @@ public class Wmf2Png {
 			os.close();
 			inputs.close();
 		}
-		
-		int height = Integer.parseInt(((Element) doc.getElementsByTagName("svg").item(0)).getAttribute("height"));
-		int width = Integer.parseInt(((Element) doc.getElementsByTagName("svg").item(0)).getAttribute("width"));
+
+		int height = Integer.parseInt(((Element) doc
+				.getElementsByTagName("svg").item(0)).getAttribute("height"));
+		int width = Integer.parseInt(((Element) doc.getElementsByTagName("svg")
+				.item(0)).getAttribute("width"));
 		int newHeight = 0;// 新高
 		int newWidth = 0;// 新宽
 		newHeight = height / 10;// 高缩小10倍
@@ -178,8 +182,10 @@ public class Wmf2Png {
 			newHeight = defaultWeight * height / width;
 		}
 
-		((Element) doc.getElementsByTagName("svg").item(0)).setAttribute("width", String.valueOf(newWidth));
-		((Element) doc.getElementsByTagName("svg").item(0)).setAttribute("height", String.valueOf(newHeight));
+		((Element) doc.getElementsByTagName("svg").item(0)).setAttribute(
+				"width", String.valueOf(newWidth));
+		((Element) doc.getElementsByTagName("svg").item(0)).setAttribute(
+				"height", String.valueOf(newHeight));
 		OutputStream out = new FileOutputStream(svgFile);
 		output(doc, out);
 	}
@@ -190,7 +196,8 @@ public class Wmf2Png {
 	 * @param filePath
 	 * @throws Exception
 	 */
-	public static void svgToPng(String svgPath, String pngFile) throws Exception {
+	public static void svgToPng(String svgPath, String pngFile)
+			throws Exception {
 		File svg = new File(svgPath);
 		FileInputStream wmfStream = new FileInputStream(svg);
 		ByteArrayOutputStream imageOut = new ByteArrayOutputStream();
@@ -207,7 +214,8 @@ public class Wmf2Png {
 
 		byte[] bytes = imageOut.toByteArray();
 		PNGTranscoder t = new PNGTranscoder();
-		TranscoderInput in = new TranscoderInput(new ByteArrayInputStream(bytes));
+		TranscoderInput in = new TranscoderInput(
+				new ByteArrayInputStream(bytes));
 		TranscoderOutput out = new TranscoderOutput(jpg);
 		t.transcode(in, out);
 		jpgOut.write(jpg.toByteArray());
@@ -224,7 +232,7 @@ public class Wmf2Png {
 	 * @throws Exception
 	 */
 	public static String wmfToJpg(String wmfPath) throws Exception {
-		//先wmf-->svg
+		// 先wmf-->svg
 		File wmf = new File(wmfPath);
 		FileInputStream wmfStream = new FileInputStream(wmf);
 		ByteArrayOutputStream imageOut = new ByteArrayOutputStream();
@@ -240,19 +248,21 @@ public class Wmf2Png {
 		WMFTranscoder transcoder = new WMFTranscoder();
 		TranscodingHints hints = new TranscodingHints();
 		transcoder.setTranscodingHints(hints);
-		TranscoderInput input = new TranscoderInput(new ByteArrayInputStream(imageOut.toByteArray()));
+		TranscoderInput input = new TranscoderInput(new ByteArrayInputStream(
+				imageOut.toByteArray()));
 		ByteArrayOutputStream svg = new ByteArrayOutputStream();
 		TranscoderOutput output = new TranscoderOutput(svg);
 		transcoder.transcode(input, output);
-		
-		//再svg-->png
+
+		// 再svg-->png
 		ByteArrayOutputStream jpg = new ByteArrayOutputStream();
 		String jpgFile = StringUtils.replace(wmfPath, "wmf", "png");
 		FileOutputStream jpgOut = new FileOutputStream(jpgFile);
 
 		byte[] bytes = svg.toByteArray();
 		PNGTranscoder t = new PNGTranscoder();
-		TranscoderInput in = new TranscoderInput(new ByteArrayInputStream(bytes));
+		TranscoderInput in = new TranscoderInput(
+				new ByteArrayInputStream(bytes));
 		TranscoderOutput out = new TranscoderOutput(jpg);
 		t.transcode(in, out);
 		jpgOut.write(jpg.toByteArray());

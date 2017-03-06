@@ -17,6 +17,10 @@ Ext.define('MyApp.view.homePanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.homePanel',
 
+    requires: [
+        'Ext.Img'
+    ],
+
     html: '<div id="map"></div>',
     title: '主页',
     defaultListenerScope: true,
@@ -24,14 +28,22 @@ Ext.define('MyApp.view.homePanel', {
     listeners: {
         afterrender: 'onPanelAfterRender'
     },
+    items: [
+        {
+            xtype: 'image',
+            height: 292,
+            width: 386,
+            src: 'images/login/logo.png'
+        }
+    ],
 
     onPanelAfterRender: function(component, eOpts) {
-        //加入地图的js文件
-        var head = document.getElementsByTagName('head')[0];
-        var script= document.createElement("script");
-        script.type = "text/javascript";
-        script.src="mapjs/homeMap.js";
-        head.appendChild(script);
+        // //加入地图的js文件
+        // var head = document.getElementsByTagName('head')[0];
+        // var script= document.createElement("script");
+        // script.type = "text/javascript";
+        // script.src="mapjs/homeMap.js";
+        // head.appendChild(script);
     }
 
 });

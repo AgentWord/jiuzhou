@@ -24,7 +24,7 @@ public class FileUploadService {
 
 	// 文件上传
 	public Map<String, Object> fileUpload(HttpServletRequest request,
-			HttpServletResponse response,String type) {
+			HttpServletResponse response, String type) {
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		Map<String, Object> myMapResult = new TreeMap<String, Object>();
 		try {

@@ -57,7 +57,8 @@ public class SystemUserManagerService {
 				throw new Exception("当前登录用户未找到。");
 			} else {
 				String sql = "select ri.right_name " + "from u_right_info ri "
-						+ "where ri.right_id in " + "(SELECT DISTINCT rr.right_id "
+						+ "where ri.right_id in "
+						+ "(SELECT DISTINCT rr.right_id "
 						+ "from u_role_right rr " + "where rr.role_id = "
 						+ "(SELECT ur.roleid " + "from u_user_role ur "
 						+ "where ur.username = '" + userName + "' limit 1))";
@@ -88,16 +89,18 @@ public class SystemUserManagerService {
 		Map<String, Object> map = new TreeMap<String, Object>();
 		try {
 			// 当前系统登录用户
-			
+
 			if (roleId == null || roleId.equals("")) {
 				throw new Exception("请输入角色编号。");
 			} else {
 				String sql = "select * from u_right_info ri "
-						+ "where ri.right_id in " + "(SELECT DISTINCT rr.right_id "
-						+ "from u_role_right rr " + "where rr.role_id =" + roleId+" )";
+						+ "where ri.right_id in "
+						+ "(SELECT DISTINCT rr.right_id "
+						+ "from u_role_right rr " + "where rr.role_id ="
+						+ roleId + " )";
 				SQLQuery query = sessionFactory.getCurrentSession()
 						.createSQLQuery(sql);
-				List<URightInfo> list = query.list();						
+				List<URightInfo> list = query.list();
 				map.put("root", list);
 				map.put("success", true);
 			}

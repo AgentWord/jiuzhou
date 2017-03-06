@@ -2,22 +2,9 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-
-	<table-filter match-name="cost_detail" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="employee_management"
-		match-catalog="caiwu">
-	</table-filter>
-	<table-filter match-name="project_management"
-		match-catalog="caiwu">
-	</table-filter>
-	<table-filter match-name="u_dept_info" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="u_right_info" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="u_role_info" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="u_role_right" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="u_user_info" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="u_user_role" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="u_user_true_info" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="notice_columns" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="notice_news" match-catalog="caiwu"></table-filter>
-	<table-filter match-name="achievement_file" match-catalog="caiwu"></table-filter>
+  <table-filter match-schema="caiwu" match-name=".*"/>
+  <table-filter match-catalog="caiwu" match-name="achievement_file"/>
+  <table-filter match-catalog="caiwu" match-name="cost_detail"/>
+  <table-filter match-catalog="caiwu" match-name="employee_management"/>
+  <table-filter match-catalog="caiwu" match-name="project_management"/>
 </hibernate-reverse-engineering>

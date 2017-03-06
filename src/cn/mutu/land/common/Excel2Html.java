@@ -354,7 +354,7 @@ public class Excel2Html
 	public static void main(String[] args) throws Exception
     {
         List<ArrayList<String>> dataLst = new Excel2Html()
-                .read("D:\\班费情况2016.6.8.xls");
+                .read("E:\\班费情况2016.6.8.xls");
         StringBuffer tab = new StringBuffer();
         tab.append("<table border='1' cellspacing='0' cellpadding='3'>");
         for (ArrayList<String> innerLst : dataLst) {
@@ -371,7 +371,7 @@ public class Excel2Html
             tab.append("</tr>");
         }
         tab.append("</table>");
-        writeFile(tab.toString(),"D://test/班费情况2016.6.8.html");
+        writeFile(tab.toString(),"E://test/班费情况2016.6.8.html");
         System.out.println(tab.toString());
     }
 }

@@ -29,18 +29,33 @@
             "userConfig": {
                 "fn": "onPanelAfterRender",
                 "implHandler": [
-                    "//加入地图的js文件",
-                    "var head = document.getElementsByTagName('head')[0];",
-                    "var script= document.createElement(\"script\");",
-                    "script.type = \"text/javascript\";",
-                    "script.src=\"mapjs/homeMap.js\";",
-                    "head.appendChild(script);"
+                    "// //加入地图的js文件",
+                    "// var head = document.getElementsByTagName('head')[0];",
+                    "// var script= document.createElement(\"script\");",
+                    "// script.type = \"text/javascript\";",
+                    "// script.src=\"mapjs/homeMap.js\";",
+                    "// head.appendChild(script);"
                 ],
                 "name": "afterrender",
                 "scope": "me"
             },
             "name": "onPanelAfterRender",
             "designerId": "57ceb202-9d2e-47a7-9a30-5978a7034e52"
+        },
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 292,
+                "src": "images/login/logo.png",
+                "width": 386
+            },
+            "name": "MyImg",
+            "designerId": "56f99e72-9ed2-4313-ba7b-458ceae33774"
         }
     ]
 }

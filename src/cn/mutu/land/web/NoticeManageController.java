@@ -71,11 +71,12 @@ public class NoticeManageController {
 	}
 
 	// 添加用户信息
-	@RequestMapping(value = "/add_NoticeNews",method=RequestMethod.POST)
+	@RequestMapping(value = "/add_NoticeNews", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Object> addNotice(@RequestBody NoticeNews notice)throws IOException {
+	public Map<String, Object> addNotice(@RequestBody NoticeNews notice)
+			throws IOException {
 		Map<String, Object> result = new HashMap<String, Object>();
-		try {		
+		try {
 			Calendar ca = Calendar.getInstance();
 			Date now = ca.getTime();
 			notice.setPublishDate(now);
@@ -106,16 +107,17 @@ public class NoticeManageController {
 		}
 		return result;
 	}
+
 	// 更新阅读次数
 	@RequestMapping(value = "/update_noticeReadCount")
 	@ResponseBody
-	public Map<String, Object> updateReadCount(
-			@RequestParam("id") String id)
+	public Map<String, Object> updateReadCount(@RequestParam("id") String id)
 			throws SQLException {
 		id = Encoder.encode(id);
 		return this.noticeService.updateNoticeRead(id);
 		//
 	}
+
 	// -------------------------columns----------------------------
 	@RequestMapping(value = "/get_NoticeColumns")
 	@ResponseBody
@@ -165,34 +167,37 @@ public class NoticeManageController {
 		}
 		return result;
 	}
-	
-	@RequestMapping(value="/addNoticeNewsfile",method=RequestMethod.POST)
+
+	@RequestMapping(value = "/addNoticeNewsfile", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Object> addNoticeNewsfile(@RequestParam("file")CommonsMultipartFile[] files){
-		Map<String, Object>result=new HashMap<String, Object>();
-		String filenames="";
-		String filepath="D:/landuse/notice/"+DateUtil.getOnlyId()+"/";
-		if(files!=null&&files.length>0){
-			System.out.println(files.length);			
-			for(int i=0;i<files.length;i++){
-				String filename=files[i].getOriginalFilename();//Extjs组件上传不需对中文进行解码
-				boolean s=SaveUploadFile.saveFile(files[i], filepath,filename);				
-				if(!s){
+	public Map<String, Object> addNoticeNewsfile(
+			@RequestParam("file") CommonsMultipartFile[] files) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		String filenames = "";
+		String filepath = "D:/landuse/notice/" + DateUtil.getOnlyId() + "/";
+		if (files != null && files.length > 0) {
+			System.out.println(files.length);
+			for (int i = 0; i < files.length; i++) {
+				String filename = files[i].getOriginalFilename();// Extjs组件上传不需对中文进行解码
+				boolean s = SaveUploadFile.saveFile(files[i], filepath,
+						filename);
+				if (!s) {
 					result.put("success", false);
 					result.put("msg", ",failed saved");
 					return result;
 				}
-				if(i!=files.length-1)filename+=";";
-				filenames+=filename;
+				if (i != files.length - 1)
+					filename += ";";
+				filenames += filename;
 			}
-			
+
 			result.put("success", true);
 			result.put("msg", "success saved");
 			result.put("filenames", filenames);
 			result.put("filepath", filepath);
-		}else{
+		} else {
 			result.put("success", false);
-			result.put("msg", "failed saved");			
+			result.put("msg", "failed saved");
 		}
 		return result;
 	}
