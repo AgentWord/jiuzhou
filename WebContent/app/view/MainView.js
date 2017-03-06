@@ -107,7 +107,7 @@ Ext.define('MyApp.view.MainView', {
             items: [
                 {
                     xtype: 'panel',
-                    title: '项目客户管理',
+                    title: '项目管理',
                     items: [
                         {
                             xtype: 'menu',
@@ -119,20 +119,20 @@ Ext.define('MyApp.view.MainView', {
                                     xtype: 'menuitem',
                                     id: 'projectManagement',
                                     hideOnClick: false,
-                                    text: '项目管理'
+                                    text: '项目信息管理'
                                 },
                                 {
                                     xtype: 'menuitem',
                                     id: 'enterprise_kfqIntensity',
                                     hideOnClick: false,
-                                    text: '客户管理'
+                                    text: '项目结项管理'
                                 },
                                 {
                                     xtype: 'menuitem',
                                     hideMode: 'visibility',
                                     id: 'enterprise_UseRightExpireWarning',
                                     hideOnClick: false,
-                                    text: '其他'
+                                    text: '项目客户管理'
                                 }
                             ],
                             listeners: {
@@ -144,7 +144,7 @@ Ext.define('MyApp.view.MainView', {
                 {
                     xtype: 'panel',
                     collapsed: true,
-                    title: '财务报销管理',
+                    title: '财务管理',
                     items: [
                         {
                             xtype: 'menu',
@@ -159,22 +159,21 @@ Ext.define('MyApp.view.MainView', {
                                 },
                                 {
                                     xtype: 'menuitem',
-                                    hidden: true,
-                                    id: 'kfq_manager1',
+                                    id: 'salaryManagement',
                                     hideOnClick: false,
-                                    text: '开发区信息管理'
+                                    text: '薪资管理'
                                 },
                                 {
                                     xtype: 'menuitem',
-                                    id: 'zdxx_upload',
+                                    id: 'zichanManagement',
                                     hideOnClick: false,
-                                    text: '日常报销'
+                                    text: '资产管理'
                                 },
                                 {
                                     xtype: 'menuitem',
-                                    id: 'dxqy_upload1',
+                                    id: 'incomeManagement',
                                     hideOnClick: false,
-                                    text: '借还款'
+                                    text: '往账管理'
                                 },
                                 {
                                     xtype: 'menuitem',
@@ -187,6 +186,52 @@ Ext.define('MyApp.view.MainView', {
                             ],
                             listeners: {
                                 click: 'onMenu3Click91'
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    title: '人事管理',
+                    items: [
+                        {
+                            xtype: 'menu',
+                            floating: false,
+                            itemId: 'menu3',
+                            items: [
+                                {
+                                    xtype: 'menuitem',
+                                    id: 'survey_DataReceive',
+                                    hideOnClick: false,
+                                    text: '社保缴纳'
+                                },
+                                {
+                                    xtype: 'menuitem',
+                                    id: 'survey_DataManager',
+                                    hideOnClick: false,
+                                    text: '人员入/离职'
+                                },
+                                {
+                                    xtype: 'menuitem',
+                                    id: 'survey_zdxx',
+                                    hideOnClick: false,
+                                    text: '人事考评'
+                                },
+                                {
+                                    xtype: 'menuitem',
+                                    id: 'survey_TypicalEnterprise',
+                                    hideOnClick: false,
+                                    text: '人事变动'
+                                },
+                                {
+                                    xtype: 'menuitem',
+                                    id: 'survey_Landuse',
+                                    hideOnClick: false,
+                                    text: '档案管理'
+                                }
+                            ],
+                            listeners: {
+                                click: 'onMenu3Click2'
                             }
                         }
                     ]
@@ -245,52 +290,6 @@ Ext.define('MyApp.view.MainView', {
                             ],
                             listeners: {
                                 click: 'onMenu3Click9'
-                            }
-                        }
-                    ]
-                },
-                {
-                    xtype: 'panel',
-                    title: '公司人事管理',
-                    items: [
-                        {
-                            xtype: 'menu',
-                            floating: false,
-                            itemId: 'menu3',
-                            items: [
-                                {
-                                    xtype: 'menuitem',
-                                    id: 'survey_DataReceive',
-                                    hideOnClick: false,
-                                    text: '社保缴纳'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    id: 'survey_DataManager',
-                                    hideOnClick: false,
-                                    text: '人员入/离职'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    id: 'survey_zdxx',
-                                    hideOnClick: false,
-                                    text: '人事考评'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    id: 'survey_TypicalEnterprise',
-                                    hideOnClick: false,
-                                    text: '人事变动'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    id: 'survey_Landuse',
-                                    hideOnClick: false,
-                                    text: '档案管理'
-                                }
-                            ],
-                            listeners: {
-                                click: 'onMenu3Click2'
                             }
                         }
                     ]
@@ -770,14 +769,14 @@ Ext.define('MyApp.view.MainView', {
         mainView.add(Ext.widget(xtype));
     },
 
-    onMenu3Click9: function(menu, item, e, eOpts) {
+    onMenu3Click2: function(menu, item, e, eOpts) {
         var xtype = item.id;
         var mainView = Ext.getCmp('mainView');
         mainView.removeAll();
         mainView.add(Ext.widget(xtype));
     },
 
-    onMenu3Click2: function(menu, item, e, eOpts) {
+    onMenu3Click9: function(menu, item, e, eOpts) {
         var xtype = item.id;
         var mainView = Ext.getCmp('mainView');
         mainView.removeAll();
@@ -879,9 +878,9 @@ Ext.define('MyApp.view.MainView', {
 
     onMainViewAfterRender: function(component, eOpts) {
         var xtype = 'homePanel';
-                var mainView = Ext.getCmp('mainView');
-                mainView.removeAll();
-                mainView.add(Ext.widget(xtype));
+        var mainView = Ext.getCmp('mainView');
+        mainView.removeAll();
+        mainView.add(Ext.widget(xtype));
     }
 
 });

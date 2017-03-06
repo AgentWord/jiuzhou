@@ -11,7 +11,7 @@
         "height": 450,
         "id": null,
         "layout": "border",
-        "title": "项目信息管理",
+        "title": "报销记录管理",
         "width": 808
     },
     "name": "projectManagement1",

@@ -2,9 +2,5 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-schema="caiwu" match-name=".*"/>
-  <table-filter match-catalog="caiwu" match-name="achievement_file"/>
-  <table-filter match-catalog="caiwu" match-name="cost_detail"/>
-  <table-filter match-catalog="caiwu" match-name="employee_management"/>
-  <table-filter match-catalog="caiwu" match-name="project_management"/>
+	<table-filter match-name="notice_news" match-catalog="caiwu"></table-filter>
 </hibernate-reverse-engineering>

@@ -1,11 +1,18 @@
 package cn.mutu.land.web;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -200,5 +207,62 @@ public class NoticeManageController {
 			result.put("msg", "failed saved");
 		}
 		return result;
+	}
+	/**
+	 * 单文件下载
+	 * @param filepath
+	 * @param fileName
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("/export_file")
+	@ResponseBody
+	public String download(
+			@RequestParam("filepath")String filepath,
+			@RequestParam("filename")String fileName,
+			@RequestParam("groupFilepath")String groupFilepath, 
+			HttpServletRequest request,HttpServletResponse response) {
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("multipart/form-data");
+		response.setHeader("Content-Disposition", "attachment;fileName="
+				+ fileName);//attachment
+
+		groupFilepath=Encoder.encode(groupFilepath);
+		filepath=Encoder.encode(filepath)+groupFilepath;	
+		fileName=Encoder.encode(fileName);
+		System.out.println("download:"+filepath+fileName);
+		File file=new File(filepath+fileName);
+		if (!file.exists()) return null;
+		
+		InputStream inputStream=null;
+		OutputStream os =null;
+		try {
+			inputStream= new FileInputStream(file);
+			os= response.getOutputStream();
+			byte[] b = new byte[2048];
+			int length;
+			while ((length = inputStream.read(b)) > 0) {
+				os.write(b, 0, length);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{			
+				try {
+					if(os!=null)os.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}				
+				try {
+					if(inputStream!=null)inputStream.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}					
+		}
+        //  返回值要注意，要不然就出现下面这句错误！
+        //java+getOutputStream() has already been called for this response
+		return null;
 	}
 }

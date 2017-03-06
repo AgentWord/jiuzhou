@@ -128,7 +128,7 @@
                             "userConfig": {
                                 "dataIndex": "proId",
                                 "text": "项目编号",
-                                "width": 80
+                                "width": 110
                             },
                             "name": "MyColumn2",
                             "designerId": "31ea5123-abca-4f4c-b380-1b205fe13b77"
@@ -141,7 +141,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "align": "center",
                                 "dataIndex": "proName",
                                 "text": "项目名称",
                                 "width": 244
@@ -554,7 +553,7 @@
                                     "userConfig": {
                                         "icon": "images/table/add.png",
                                         "layout|flex": null,
-                                        "text": "申请新项目"
+                                        "text": "立项申请"
                                     },
                                     "name": "MyButton17",
                                     "designerId": "69fdea0a-9a0a-441e-a92d-2755df31dd73",
@@ -584,6 +583,49 @@
                                             },
                                             "name": "handler",
                                             "designerId": "76548596-2930-4ac2-8dd2-197cb2b7b4a6"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "images/table/add.png",
+                                        "layout|flex": null,
+                                        "text": "结项申请"
+                                    },
+                                    "name": "MyButton13",
+                                    "designerId": "5acd287d-11e2-4315-82cd-c5a77b97a401",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "    var win = Ext.widget('db_projectInfoAddWindow');",
+                                                    "    //console.log(win);",
+                                                    "    win.show();",
+                                                    "",
+                                                    "    "
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "7f1e198f-c96d-4f21-9151-f01c5416b8da"
                                         }
                                     ]
                                 },
@@ -880,7 +922,7 @@
                     "userConfig": {
                         "icon": "images/table/add.png",
                         "layout|flex": null,
-                        "text": "提交申请项目"
+                        "text": "待批准项目"
                     },
                     "name": "MyButton4",
                     "designerId": "e3ed0008-9c4d-4547-b422-b482a4f55aa0",

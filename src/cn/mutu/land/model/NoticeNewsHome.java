@@ -1,11 +1,9 @@
 package cn.mutu.land.model;
 
-// Generated 2017-2-12 21:29:17 by Hibernate Tools 4.0.0
+// Generated 2017-3-6 22:24:46 by Hibernate Tools 4.0.0
 
 import java.util.List;
-
 import javax.naming.InitialContext;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
@@ -14,7 +12,6 @@ import org.hibernate.criterion.Example;
 
 /**
  * Home object for domain model class NoticeNews.
- * 
  * @see cn.mutu.land.model.NoticeNews
  * @author Hibernate Tools
  */

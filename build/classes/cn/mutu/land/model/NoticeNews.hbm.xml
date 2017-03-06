@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-2-12 21:29:16 by Hibernate Tools 4.0.0 -->
+<!-- Generated 2017-3-6 22:24:46 by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
     <class name="cn.mutu.land.model.NoticeNews" table="notice_news" catalog="caiwu">
         <id name="id" type="java.lang.Integer">
@@ -43,8 +43,8 @@
                 <comment>1publish2draft3Recycle</comment>
             </column>
         </property>
-        <property name="attachment" type="string">
-            <column name="attachment" length="200">
+        <property name="attachmentFilename" type="string">
+            <column name="attachment_filename" length="300">
                 <comment>attachment</comment>
             </column>
         </property>
@@ -55,6 +55,11 @@
         </property>
         <property name="readCount" type="int">
             <column name="readCount" not-null="true" />
+        </property>
+        <property name="attachmentFilepath" type="string">
+            <column name="attachment_filepath" length="300">
+                <comment>&#184;&#189;&#188;&#254;&#194;&#183;&#190;&#182;</comment>
+            </column>
         </property>
     </class>
 </hibernate-mapping>

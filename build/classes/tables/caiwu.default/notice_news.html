@@ -216,7 +216,7 @@
 							</a>
 						</td>
 						<td>
-							longtext
+							varchar(65535)
 						</td>
 						<td>
 							65,535
@@ -261,15 +261,15 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#column_detail_attachment">
-								attachment
+							<a href="#column_detail_attachment_filename">
+								attachment_filename
 							</a>
 						</td>
 						<td>
-							varchar(200)
+							varchar(300)
 						</td>
 						<td>
-							200
+							300
 						</td>
 						<td>
 							19
@@ -291,7 +291,7 @@
 							</a>
 						</td>
 						<td>
-							longtext
+							varchar(300)
 						</td>
 						<td>
 							300
@@ -329,6 +329,31 @@
 						</td>
 						<td>
 							false
+						</td>
+						<td>
+							false
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#column_detail_attachment_filepath">
+								attachment_filepath
+							</a>
+						</td>
+						<td>
+							varchar(300)
+						</td>
+						<td>
+							300
+						</td>
+						<td>
+							19
+						</td>
+						<td>
+							2
+						</td>
+						<td>
+							true
 						</td>
 						<td>
 							false
@@ -575,7 +600,7 @@
 				
 				<ul>
 					<li>
-						<strong>Type:</strong> longtext
+						<strong>Type:</strong> varchar(65535)
 					</li>
 					<li>
 						<strong>Length:</strong> 65,535
@@ -627,14 +652,14 @@
 
 
 				<hr/>
-				<h3 id="column_detail_attachment">attachment</h3>
+				<h3 id="column_detail_attachment_filename">attachment_filename</h3>
 				
 				<ul>
 					<li>
-						<strong>Type:</strong> varchar(200)
+						<strong>Type:</strong> varchar(300)
 					</li>
 					<li>
-						<strong>Length:</strong> 200
+						<strong>Length:</strong> 300
 					</li>
 					<li>
 						<strong>Precision:</strong> 19
@@ -659,7 +684,7 @@
 				
 				<ul>
 					<li>
-						<strong>Type:</strong> longtext
+						<strong>Type:</strong> varchar(300)
 					</li>
 					<li>
 						<strong>Length:</strong> 300
@@ -706,6 +731,34 @@
 					</li>
 					<li>
 						<strong>Comment:</strong> 
+					</li>
+				</ul>
+
+
+				<hr/>
+				<h3 id="column_detail_attachment_filepath">attachment_filepath</h3>
+				
+				<ul>
+					<li>
+						<strong>Type:</strong> varchar(300)
+					</li>
+					<li>
+						<strong>Length:</strong> 300
+					</li>
+					<li>
+						<strong>Precision:</strong> 19
+					</li>
+					<li>
+						<strong>Scale:</strong> 2
+					</li>
+					<li>
+						<strong>Nullable:</strong> true
+					</li>
+					<li>
+						<strong>Unique:</strong> false
+					</li>
+					<li>
+						<strong>Comment:</strong> ¸½¼þÂ·¾¶
 					</li>
 				</ul>
 

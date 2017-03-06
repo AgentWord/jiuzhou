@@ -127,7 +127,7 @@ if (get_value != "notice_id") {
     });
 
 } else {
-    url = "http://localhost:8080/landuse/get_NoticeNews?_dc=1465456417022&searchKeyword=&noticeState=&page=1&start=0&limit=25";
+    url = "http://localhost:8080/jiuzhou/get_NoticeNews?_dc=1465456417022&searchKeyword=&noticeState=&page=1&start=0&limit=25";
     $.ajax({
 
         url: url,
@@ -168,7 +168,7 @@ function addAttachmentlink(data){
     	var filepath=data.attachmentFilepath;
     	var filenames=data.attachmentFilename.split(";");
     	var size=filenames.length;
-        var baseurl="<a class='attachment' href=http://localhost:8080/landuse/achieve/export_file?groupFilepath=";                      
+        var baseurl="<a class='attachment' href=http://localhost:8080/jiuzhou/export_file?groupFilepath=";                      
      	for(var n=0;n<size;n++){
             var attachmentLink=baseurl+"&filepath="+filepath+"&filename="+filenames[n];
             attachmentLink=attachmentLink+">"+filenames[n]+"</a><br>";

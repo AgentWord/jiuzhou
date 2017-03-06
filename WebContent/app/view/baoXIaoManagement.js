@@ -38,7 +38,7 @@ Ext.define('MyApp.view.baoXIaoManagement', {
     height: 450,
     width: 808,
     layout: 'border',
-    title: '项目信息管理',
+    title: '报销记录管理',
     defaultListenerScope: true,
 
     items: [

@@ -12,8 +12,8 @@
 	map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
 	var point = new BMap.Point(116.379802, 40.047272);
 	map.centerAndZoom(point, 18);
-	var content = '<div style="margin:0;line-height:15px;padding:2px;">' +
-     '<img src="images/login/logo.png" alt="" style="float:right;zoom:1;overflow:hidden;width:120px;height:100px;margin-left:3px;"/>' +
+	var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+     '<img src="images/login/logo.png" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
      '地址：北京市海淀区宝盛里观林园3-4-602.<br/>电话：(010)58803082<br/>简介：北京世纪九州软件有限公司位于北京市海淀区林萃桥地铁站附近，奥林匹克森林公园以北。' +
    '</div>';
 	 var searchInfoWindow = null;

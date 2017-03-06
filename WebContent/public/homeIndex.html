@@ -104,58 +104,12 @@
                         </span>
                         <span>
                         <a href="http://old.mlr.gov.cn/" target="_blank">中华人民共和国国土资源部</a></span>
-                            <!-- <span><a href="http://xqb.bnu.edu.cn/xiaoguo.html" target="_blank">新校区建设指挥部</a></span>
-                            <span>
-								<a href="http://xyh.bnu.edu.cn/bnuxy/" target="_blank">校友总会</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://xuefeng.bnu.edu.cn/" target="_blank">学风建设</a>
-							</span>
-                            <span><a href="http://www.bnu.edu.cn/jsjyjykx/52918.html">教师教育机构</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.bnu.edu.cn/jsjyjykx/52919.html">教育科学期刊</a></span>
-                            <span>&nbsp;<a href="http://xinqing100.bnu.edu.cn/" target="_blank">京师心晴</a></span>
-                            <span><a href="http://ipv6te.bnu.edu.cn/" target="_blank">IPv6教师教育创新支持系统</a></span> -->
+                           
                         </div>
                         <div style="clear:both"></div>
                     </div>
                 </div>
             </div>
-            <hr style="height:10px;border:none;border-top:10px groove skyblue;" />
-            <div>
- 
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                    <tbody>
-                        <tr>
-                            <td width="22%" height="89" valign="top">
-                                <!--  <h3>首页</h3> -->
-                                <ul id="lawtypes" class="ul_daohang6">
-                                    <!-- <li><a href="ysglk1/index.html">矿产资源管理</a></li>
-                                    <li><a href="glkjk1/index.html">土地管理</a></li>
-                                    <li><a href="zxzjk1/index.html">海洋管理</a></li>
-                                    <li><a href="xssw1/index.html">地方法规</a></li>
-                                    <li><a href="gzsw3/index.html">综合管理</a></li>
-                                    <li><a href="fpkjygl2/index.html">地质环境管理</a></li>
-                                    <li><a href="zfcgk1/index.html">测绘管理</a></li>
-                                    <li><a href="hszx1/index.html">相关法律</a></li>
-                                    <li><a href="hszx1/index.html">法律解释</a></li>
-                                    <li><a href="hszx1/index.html">部门规章</a></li> -->
-                                </ul>
-                            </td>
-                            <td width="78%" rowspan="2" valign="top">
-                                <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
-                                    <tbody>
-                                        <tr id="lawtr">
-                                            <td class='boxtitle' align='left' width='50%' height='31'><span class="title">标题</span></td>
-                                            <td class='boxtitle' align='middle' width='20%' height='31'><span class="title">阅读量</span></td>
-                                            <td class='boxtitle' align='middle' width='30%' height='31'><span class="title">发布时间</span></td>
-                                        </tr>
-                                    </tbody>
-                                    <tbody id="law_table">
-                                    </tbody>
-                                    <!--  <tbody id="page">
-                                    	
-                                    </tbody> -->
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
             <hr style="height:10px;border:none;border-top:10px groove skyblue;" />
             <div class="footercontant  row">
@@ -167,37 +121,12 @@
     </div>
 </body>
 <script type="text/javascript">
-$.ajax({
-    url: "http://localhost:8080/landuse/get_LawTypes?_dc=1465535514109&page=1&start=0&limit=25",
-    success: function(result) {
-        var lawtypes = result.root;
 
-        for (var i = 0; i < lawtypes.length; i++) {
-            var lawclass = lawtypes[i].lawType;
-            var lawid = lawtypes[i].id;
-            var lawtype = "<li><a  id='lawid" + lawtypes[i].id + "'>" + lawtypes[i].lawType + "</a></li>";
-            $("#lawtypes").append(lawtype);
-            /*$("#lawid"+lawid).bind("click",function(){
-            	console.log(lawclass);
-            	console.log(lawid);
-            })*/
-
-        };
-        $("ul li").click(function() {
-            $("#law_table tr").remove();
-            //console.log(this.innerText);
-            law_list(this.innerText);
-        });
-
-        /* $(ul li).click(law_list(this.innerHTML));*/
-    }
-
-});
 var i1,i2,i3,i4;
 $.ajax({
 
 
-    url: "http://localhost:8080/landuse/get_NoticeNews?_dc=1465456417022&searchKeyword=&noticeState=&page=1&start=0&limit=25",
+    url: "http://localhost:8080/jiuzhou/get_NoticeNews?_dc=1465456417022&searchKeyword=&noticeState=&page=1&start=0&limit=25",
 
     success: function(result) {
 
@@ -211,9 +140,9 @@ $.ajax({
             if (data[i].publishDate == null) {
                 data[i].publishDate = "2016-4-3";
             }
-            console.log("新闻：" + data[i].publishDate);
+           /* console.log("新闻：" + data[i].publishDate);
             console.log(data[i].noticeTitle);
-            console.log(data[i].noticeColumn);
+            console.log(data[i].noticeColumn);*/
 
 
 
@@ -239,34 +168,7 @@ $.ajax({
 
 });
 
-function law_list(lawtype) {
 
-    $.ajax({
-
-        url: "http://localhost:8080/landuse/get_Top10Laws?lawType=" + lawtype + "&page=1&start=0&limit=25",
-
-        success: function(result) {
-
-            var lawData = result.root;
-            var j = 0,
-                record = 0;
-            for (j; j < lawData.length; j++) {
-                if (lawData[j].publishDate == null) {
-                    lawData[j].publishDate = "未发布";
-                }
-
-
-                var law_title = "<tr><td width='50%' height='31' class='aa'><div align='left'><a title='" + lawData[j].lawTitle + "'href='info_detail.html?law_id=" + lawData[j].id + "' target='_blank' class='aa'>" + lawData[j].lawTitle + "</a></div></td><td class='aa' align='middle' width='20%'>【阅读" +lawData[j].readCount+"次】</td><td class='aa' align='middle' width='30%' height='31'>"+ lawData[j].publishDate + "</td></tr>";
-                $("#law_table").append(law_title);
-                record++;
-
-            }
-            $("#law_table").append("<tr><td width='50%' height='31' class='aa'><div align='left'><a  target='_blank' class='aa'></a></td><td class='aa' align='middle' width='20%'></td><td width='30%' class='aa1'><div align='middle' class='footercontantline col-md-12'>总记录数:" + record + "条</div></td></tr>");
-
-        }
-    });
-
-};
 
  function getNotice(dataMsg, titles, addMsg,count) {
     
@@ -281,36 +183,8 @@ function law_list(lawtype) {
         return false;
 
 };
-//显示前10条记录
-$.ajax({
 
-            url: "http://localhost:8080/landuse/get_Top10Laws?_dc=1465479261629&lawType=&page=1&start=0&limit=25",
 
-            success: function(result) {
-
-                var lawData = result.root;
-                var j = 0;
-                for (j; j < lawData.length; j++) {
-                    if (lawData[j].publishDate == null) {
-                        lawData[j].publishDate = "未发布";
-                    }
-                    console.log(lawData[j].publishDate);
-                    var law_title = "<tr><td width='50%' height='31' class='aa'><div align='left'><a title='" + lawData[j].lawTitle + "'href='info_detail.html?law_id=" + lawData[j].id + "' target='_blank' class='aa' style=''>" + lawData[j].lawTitle + "</a></div></td><td class='aa' align='middle' width='20%'>【阅读" +lawData[j].readCount+"次】</td><td class='aa' align='middle' width='30%' height='31'>"+ lawData[j].publishDate + "</td></tr>";
-                    $("#law_table").append(law_title);
-                }
-                $.ajax({
-
-                    url: "http://localhost:8080/landuse/get_laws?_dc=1465479261629&searchKeyword=&page=1&start=0&limit=25",
-
-                    success: function(returnValue) {
-                    	var data=returnValue.root;
-                        console.log(data.length);
-                        $("#law_table").append("<tr><td width='50%' height='31' class='aa'><div align='left'><a  target='_blank' class='aa'></a></td><td class='aa' align='middle' width='20%'></td><td width='30%' class='aa1'><div align='middle' class='footercontantline col-md-12'>总记录数:" + data.length + "条<a  class='more' href='more.html?title=laws'>查看更多</a></div></td></tr>");
-                    }
-
-                });
-            }
-        });
             
 </script>
 

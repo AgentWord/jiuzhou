@@ -83,14 +83,13 @@ Ext.define('MyApp.view.projectManagement', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            width: 80,
+                            width: 110,
                             dataIndex: 'proId',
                             text: '项目编号'
                         },
                         {
                             xtype: 'gridcolumn',
                             width: 244,
-                            align: 'center',
                             dataIndex: 'proName',
                             text: '项目名称'
                         },
@@ -226,7 +225,21 @@ Ext.define('MyApp.view.projectManagement', {
 
                                     },
                                     icon: 'images/table/add.png',
-                                    text: '申请新项目'
+                                    text: '立项申请'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, e) {
+
+
+                                        var win = Ext.widget('db_projectInfoAddWindow');
+                                        //console.log(win);
+                                        win.show();
+
+
+                                    },
+                                    icon: 'images/table/add.png',
+                                    text: '结项申请'
                                 },
                                 {
                                     xtype: 'tbseparator'
@@ -352,7 +365,7 @@ Ext.define('MyApp.view.projectManagement', {
                         });
                     },
                     icon: 'images/table/add.png',
-                    text: '提交申请项目'
+                    text: '待批准项目'
                 },
                 {
                     xtype: 'button',

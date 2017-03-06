@@ -193,7 +193,7 @@ Ext.define('MyApp.view.notice_Manage', {
                                                     if (confirm == "yes"){
                                                         Ext.Ajax.request(
                                                         {
-                                                            url : 'del_NoticeToDraft',
+                                                            url : 'del_NoticeNews',
                                                             params :
                                                             {
                                                                 id : record.get('id')
@@ -215,7 +215,7 @@ Ext.define('MyApp.view.notice_Manage', {
                                         },
                                         {
                                             xtype: 'button',
-                                            href: 'http://localhost:8080/landuse/public/homeIndex.html',
+                                            href: 'http://localhost:8080/jiuzhou/public/homeIndex.html',
                                             icon: 'images/table/connect.png',
                                             text: '链接到对外发布平台'
                                         }
@@ -365,7 +365,7 @@ Ext.define('MyApp.view.notice_Manage', {
                                                     if (confirm == "yes"){
                                                         Ext.Ajax.request(
                                                         {
-                                                            url : 'del_NoticeToDelete',
+                                                            url : 'del_NoticeNews',
                                                             params :
                                                             {
                                                                 id : id

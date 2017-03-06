@@ -1,6 +1,6 @@
 package cn.mutu.land.model;
 
-// Generated 2017-2-12 21:29:15 by Hibernate Tools 4.0.0
+// Generated 2017-3-6 22:24:46 by Hibernate Tools 4.0.0
 
 import java.util.Date;
 
@@ -17,9 +17,10 @@ public class NoticeNews implements java.io.Serializable {
 	private Date editDate;
 	private String noticeContent;
 	private Integer noticeState;
-	private String attachment;
+	private String attachmentFilename;
 	private String description;
 	private int readCount;
+	private String attachmentFilepath;
 
 	public NoticeNews() {
 	}
@@ -30,8 +31,9 @@ public class NoticeNews implements java.io.Serializable {
 
 	public NoticeNews(String noticeColumn, String noticeTitle,
 			String noticeAuthor, Date publishDate, Date editDate,
-			String noticeContent, Integer noticeState, String attachment,
-			String description, int readCount) {
+			String noticeContent, Integer noticeState,
+			String attachmentFilename, String description, int readCount,
+			String attachmentFilepath) {
 		this.noticeColumn = noticeColumn;
 		this.noticeTitle = noticeTitle;
 		this.noticeAuthor = noticeAuthor;
@@ -39,9 +41,10 @@ public class NoticeNews implements java.io.Serializable {
 		this.editDate = editDate;
 		this.noticeContent = noticeContent;
 		this.noticeState = noticeState;
-		this.attachment = attachment;
+		this.attachmentFilename = attachmentFilename;
 		this.description = description;
 		this.readCount = readCount;
+		this.attachmentFilepath = attachmentFilepath;
 	}
 
 	public Integer getId() {
@@ -108,12 +111,12 @@ public class NoticeNews implements java.io.Serializable {
 		this.noticeState = noticeState;
 	}
 
-	public String getAttachment() {
-		return this.attachment;
+	public String getAttachmentFilename() {
+		return this.attachmentFilename;
 	}
 
-	public void setAttachment(String attachment) {
-		this.attachment = attachment;
+	public void setAttachmentFilename(String attachmentFilename) {
+		this.attachmentFilename = attachmentFilename;
 	}
 
 	public String getDescription() {
@@ -130,6 +133,14 @@ public class NoticeNews implements java.io.Serializable {
 
 	public void setReadCount(int readCount) {
 		this.readCount = readCount;
+	}
+
+	public String getAttachmentFilepath() {
+		return this.attachmentFilepath;
+	}
+
+	public void setAttachmentFilepath(String attachmentFilepath) {
+		this.attachmentFilepath = attachmentFilepath;
 	}
 
 }

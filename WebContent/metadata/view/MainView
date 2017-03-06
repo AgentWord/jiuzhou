@@ -267,7 +267,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": null,
-                        "title": "项目客户管理"
+                        "title": "项目管理"
                     },
                     "name": "MyPanel3",
                     "designerId": "e84deeed-6215-4aca-a04d-0914b9702e93",
@@ -298,7 +298,7 @@
                                     "userConfig": {
                                         "hideOnClick": false,
                                         "id": "projectManagement",
-                                        "text": "项目管理"
+                                        "text": "项目信息管理"
                                     },
                                     "name": "MyMenuItem",
                                     "designerId": "8e7d8619-35b1-4071-a445-94d64931dc8d"
@@ -313,7 +313,7 @@
                                     "userConfig": {
                                         "hideOnClick": false,
                                         "id": "enterprise_kfqIntensity",
-                                        "text": "客户管理"
+                                        "text": "项目结项管理"
                                     },
                                     "name": "MyMenuItem1",
                                     "designerId": "e34d3196-d2b5-4c4e-96b1-c5b9d2b5b6c7"
@@ -329,7 +329,7 @@
                                         "hideMode": "visibility",
                                         "hideOnClick": false,
                                         "id": "enterprise_UseRightExpireWarning",
-                                        "text": "其他"
+                                        "text": "项目客户管理"
                                     },
                                     "name": "MyMenuItem2",
                                     "designerId": "07bde0bb-39ef-401d-9e40-e940d68af3be"
@@ -369,7 +369,7 @@
                     "userConfig": {
                         "collapsed": true,
                         "hideMode": null,
-                        "title": "财务报销管理"
+                        "title": "财务管理"
                     },
                     "name": "MyPanel21",
                     "designerId": "2b060714-6a86-4f50-b143-3c41b80dcdf8",
@@ -412,10 +412,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "hidden": true,
                                         "hideOnClick": false,
-                                        "id": "kfq_manager1",
-                                        "text": "开发区信息管理"
+                                        "id": "salaryManagement",
+                                        "text": "薪资管理"
                                     },
                                     "name": "MyMenuItem18",
                                     "designerId": "1227da2f-92ca-48b5-b168-9cdd8f74e9f6"
@@ -429,8 +428,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "hideOnClick": false,
-                                        "id": "zdxx_upload",
-                                        "text": "日常报销"
+                                        "id": "zichanManagement",
+                                        "text": "资产管理"
                                     },
                                     "name": "MyMenuItem22",
                                     "designerId": "16c07fba-ab50-452c-aa58-378cad5bf0b2"
@@ -444,8 +443,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "hideOnClick": false,
-                                        "id": "dxqy_upload1",
-                                        "text": "借还款"
+                                        "id": "incomeManagement",
+                                        "text": "往账管理"
                                     },
                                     "name": "MyMenuItem27",
                                     "designerId": "a3325837-b3a2-4056-bda2-ca9194e654bc"
@@ -487,6 +486,134 @@
                                     },
                                     "name": "onMenu3Click91",
                                     "designerId": "8eb6959f-8f47-4077-8962-3b4cfb07d391"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "人事管理"
+                    },
+                    "name": "MyPanel9",
+                    "designerId": "4b54cbb4-2552-4e4b-bde3-f24a77857a49",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "floating": false,
+                                "itemId": "menu3",
+                                "width": null
+                            },
+                            "name": "MyMenu2",
+                            "designerId": "85832588-dcf7-48d1-a471-c22920867cd3",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hideOnClick": false,
+                                        "id": "survey_DataReceive",
+                                        "text": "社保缴纳"
+                                    },
+                                    "name": "MyMenuItem6",
+                                    "designerId": "f28c904c-4006-4aec-b9cc-954a21603296"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hideOnClick": false,
+                                        "id": "survey_DataManager",
+                                        "text": "人员入/离职"
+                                    },
+                                    "name": "MyMenuItem12",
+                                    "designerId": "1167eb88-ac2c-486a-8184-b6775152b0c4"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hideOnClick": false,
+                                        "id": "survey_zdxx",
+                                        "text": "人事考评"
+                                    },
+                                    "name": "MyMenuItem28",
+                                    "designerId": "7a2abcd2-555e-4891-bb4b-656ab3086b72"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hideOnClick": false,
+                                        "id": "survey_TypicalEnterprise",
+                                        "text": "人事变动"
+                                    },
+                                    "name": "MyMenuItem7",
+                                    "designerId": "f74b3af8-0609-4991-9f17-1ca1fd2531d0"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hideOnClick": false,
+                                        "id": "survey_Landuse",
+                                        "text": "档案管理"
+                                    },
+                                    "name": "MyMenuItem20",
+                                    "designerId": "f86685e3-0fa6-4a2d-ac36-dfa980c2435f"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMenu3Click2",
+                                        "implHandler": [
+                                            "var xtype = item.id;",
+                                            "var mainView = Ext.getCmp('mainView');",
+                                            "mainView.removeAll();",
+                                            "mainView.add(Ext.widget(xtype));"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onMenu3Click2",
+                                    "designerId": "d341b8ce-0065-40f8-bfbc-11054e7d8647"
                                 }
                             ]
                         }
@@ -637,134 +764,6 @@
                                     },
                                     "name": "onMenu3Click9",
                                     "designerId": "aed8bc85-fac7-4553-ba43-469f5b745aa5"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "title": "公司人事管理"
-                    },
-                    "name": "MyPanel9",
-                    "designerId": "4b54cbb4-2552-4e4b-bde3-f24a77857a49",
-                    "cn": [
-                        {
-                            "type": "Ext.menu.Menu",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "floating": false,
-                                "itemId": "menu3",
-                                "width": null
-                            },
-                            "name": "MyMenu2",
-                            "designerId": "85832588-dcf7-48d1-a471-c22920867cd3",
-                            "cn": [
-                                {
-                                    "type": "Ext.menu.Item",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "hideOnClick": false,
-                                        "id": "survey_DataReceive",
-                                        "text": "社保缴纳"
-                                    },
-                                    "name": "MyMenuItem6",
-                                    "designerId": "f28c904c-4006-4aec-b9cc-954a21603296"
-                                },
-                                {
-                                    "type": "Ext.menu.Item",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "hideOnClick": false,
-                                        "id": "survey_DataManager",
-                                        "text": "人员入/离职"
-                                    },
-                                    "name": "MyMenuItem12",
-                                    "designerId": "1167eb88-ac2c-486a-8184-b6775152b0c4"
-                                },
-                                {
-                                    "type": "Ext.menu.Item",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "hideOnClick": false,
-                                        "id": "survey_zdxx",
-                                        "text": "人事考评"
-                                    },
-                                    "name": "MyMenuItem28",
-                                    "designerId": "7a2abcd2-555e-4891-bb4b-656ab3086b72"
-                                },
-                                {
-                                    "type": "Ext.menu.Item",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "hideOnClick": false,
-                                        "id": "survey_TypicalEnterprise",
-                                        "text": "人事变动"
-                                    },
-                                    "name": "MyMenuItem7",
-                                    "designerId": "f74b3af8-0609-4991-9f17-1ca1fd2531d0"
-                                },
-                                {
-                                    "type": "Ext.menu.Item",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "hideOnClick": false,
-                                        "id": "survey_Landuse",
-                                        "text": "档案管理"
-                                    },
-                                    "name": "MyMenuItem20",
-                                    "designerId": "f86685e3-0fa6-4a2d-ac36-dfa980c2435f"
-                                },
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onMenu3Click2",
-                                        "implHandler": [
-                                            "var xtype = item.id;",
-                                            "var mainView = Ext.getCmp('mainView');",
-                                            "mainView.removeAll();",
-                                            "mainView.add(Ext.widget(xtype));"
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "onMenu3Click2",
-                                    "designerId": "d341b8ce-0065-40f8-bfbc-11054e7d8647"
                                 }
                             ]
                         }
@@ -1969,9 +1968,9 @@
                 "fn": "onMainViewAfterRender",
                 "implHandler": [
                     "var xtype = 'homePanel';",
-                    "        var mainView = Ext.getCmp('mainView');",
-                    "        mainView.removeAll();",
-                    "        mainView.add(Ext.widget(xtype));"
+                    "var mainView = Ext.getCmp('mainView');",
+                    "mainView.removeAll();",
+                    "mainView.add(Ext.widget(xtype));"
                 ],
                 "name": "afterrender",
                 "scope": "me"
